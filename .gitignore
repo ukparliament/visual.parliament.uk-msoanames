@@ -1,0 +1,13 @@
+# Directories
+__pycache__/
+.elasticbeanstalk/
+node_modules/
+production/
+
+# Types
+*.sh
+
+# Files
+.DS_Store
+.ebignore
+application.py
