@@ -1,6 +1,5 @@
 # Directories
 __pycache__/
-.elasticbeanstalk/
 node_modules/
 production/
 
@@ -9,5 +8,4 @@ production/
 
 # Files
 .DS_Store
-.ebignore
-application.py
+db.env
