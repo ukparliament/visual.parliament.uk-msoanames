@@ -11,6 +11,7 @@ from flask import g
 from flask import redirect
 from flask import render_template
 from flask import request
+from flask import Response
 from flask import url_for
 
 # Application ----------------------------------------------------------------
@@ -33,42 +34,68 @@ def map():
 
 @app.route('/submit', methods=['GET', 'POST'])
 def submit():
-    if request.method == 'POST':
-        con = connect()
-        cur = con.cursor()
-        cur.execute('''
-            INSERT INTO suggestions (
-                ip,
-                msoa11cd,
-                msoa11nm,
-                msoa11hclnm,
-                suggestion,
-                reason)
-            VALUES(%s, %s, %s, %s, %s, %s);''',
-                (request.remote_addr,
-                request.form['msoa11cd'],
-                request.form['msoa11nm'],
-                request.form['msoa11hclnm'],
-                request.form['suggestion'],
-                request.form['reason']))
-        con.commit()
-        cur.close()
-        con.close()
-        return '''{{
-            "msoa11cd": "{0}",
-            "msoa11cd": "{1}",
-            "msoa11nm": "{2}",
-            "msoa11hclnm": "{3}",
-            "suggestion": "{4}",
-            "reason": "{5}"}}'''.format(
-            request.remote_addr,
+
+    # Redirect to the map if not a POST request
+    if request.method != 'POST':
+        return redirect(url_for('map'))
+
+    form_keys = [
+        'msoa11cd',
+        'msoa11nm',
+        'msoa11hclnm',
+        'suggestion',
+        'reason'
+    ]
+
+    # Reject request if form values do not have expected characteristics
+    for k in form_keys:
+        if k not in request.form:
+            return Response('{"error": "Bad request"}', status = 400,
+                mimetype="application/json")
+
+    for k in form_keys[:-1]:
+        if len(request.form[k]) > 64:
+            return Response('{"error": "Bad request"}', status = 400,
+                mimetype="application/json")
+
+    if len(request.form['reason']) > 1024:
+            return Response('{"error": "Bad request"}', status = 400,
+                mimetype="application/json")
+
+    # Otherwise write the data to the database
+    con = connect()
+    cur = con.cursor()
+    cur.execute('''
+        INSERT INTO suggestions (
+            ip,
+            msoa11cd,
+            msoa11nm,
+            msoa11hclnm,
+            suggestion,
+            reason)
+        VALUES(%s, %s, %s, %s, %s, %s);''',
+            (request.remote_addr,
             request.form['msoa11cd'],
             request.form['msoa11nm'],
             request.form['msoa11hclnm'],
             request.form['suggestion'],
-            request.form['reason'])
-    else:
-        return redirect(url_for('map'))
+            request.form['reason']))
+    con.commit()
+    cur.close()
+    con.close()
+    return '''{{
+        "msoa11cd": "{0}",
+        "msoa11cd": "{1}",
+        "msoa11nm": "{2}",
+        "msoa11hclnm": "{3}",
+        "suggestion": "{4}",
+        "reason": "{5}"}}'''.format(
+        request.remote_addr,
+        request.form['msoa11cd'],
+        request.form['msoa11nm'],
+        request.form['msoa11hclnm'],
+        request.form['suggestion'],
+        request.form['reason'])
 
 # Database -------------------------------------------------------------------
 
@@ -79,7 +106,7 @@ def connect():
         password=MSOA_DB_PASSWORD,
         host=MSOA_DB_HOST,
         port=MSOA_DB_PORT,
-        connect_timeout=10)
+        connect_timeout=20)
 
     return con
 
