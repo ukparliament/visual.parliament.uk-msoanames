@@ -48,19 +48,19 @@ def submit():
     ]
 
     # Reject request if form values do not have expected characteristics
+    bad_request = Response('{"error": "Bad request"}',
+        status = 400, mimetype="application/json")
+
     for k in form_keys:
         if k not in request.form:
-            return Response('{"error": "Bad request"}', status = 400,
-                mimetype="application/json")
+            return bad_request
 
     for k in form_keys[:-1]:
         if len(request.form[k]) > 64:
-            return Response('{"error": "Bad request"}', status = 400,
-                mimetype="application/json")
+            return bad_request
 
     if len(request.form['reason']) > 1024:
-            return Response('{"error": "Bad request"}', status = 400,
-                mimetype="application/json")
+        return bad_request
 
     # Otherwise write the data to the database
     con = connect()
