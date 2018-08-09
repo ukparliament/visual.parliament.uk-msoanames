@@ -4,7 +4,7 @@ node_modules/
 production/
 
 # Types
-*.sh
+#*.sh
 
 # Files
 .DS_Store
