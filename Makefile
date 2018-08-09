@@ -89,7 +89,7 @@ build: # Using the variables defined above, run `docker build`, tagging the imag
 		--build-arg MSOA_DB_PORT="$(MSOA_DB_PORT)" \
 		--build-arg MSOA_DB_NAME="$(MSOA_DB_NAME)" \
 		--build-arg MSOA_DB_USERNAME="$(MSOA_DB_USERNAME)" \
-		--build-arg MSOA_DB_PASSWORD="$(MSOA_DB_PASSWORD)"
+		--build-arg MSOA_DB_PASSWORD="$(MSOA_DB_PASSWORD)" \
 		.
 
 run: # Run the Docker image we have created, mapping the HOST_PORT and CONTAINER_PORT
