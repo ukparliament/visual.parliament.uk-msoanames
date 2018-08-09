@@ -11,7 +11,7 @@
 ##
 
 # App name used to created our Docker image. This name is important in the context of the AWS docker repository.
-APP_NAME = thorney
+APP_NAME = msoanames
 
 # AWS account ID used to create our Docker image. This value is important in the context of the AWS docker repository.
 # When executed in GoCD, AWS_ACCOUNT_ID may be set by an environment variable
@@ -90,9 +90,9 @@ build: # Using the variables defined above, run `docker build`, tagging the imag
 run: # Run the Docker image we have created, mapping the HOST_PORT and CONTAINER_PORT
 	docker run --rm -p $(HOST_PORT):$(CONTAINER_PORT) $(IMAGE)
 
-test: # Build the docker image in development mode, using a test PARLIAMENT_BASE_URL. Then run rake within a Docker container using our image.
-	RACK_ENV=development make build
-	docker run --rm $(IMAGE):latest bundle exec rake
+#test: # Build the docker image in development mode, using a test PARLIAMENT_BASE_URL. Then run rake within a Docker container using our image.
+#	RACK_ENV=development make build
+#	docker run --rm $(IMAGE):latest bundle exec rake
 
 push: # Push the Docker images we have build to the configured Docker repository (Run in GoCD to push the image to AWS)
 	docker push $(IMAGE):$(VERSION)
@@ -112,5 +112,5 @@ deploy-ecs: # Deploy our new Docker image onto an AWS cluster (Run in GoCD to de
 	./aws_ecs/register-task-definition.sh $(APP_NAME)
 	./aws_ecs/update-services.sh "$(ECS_CLUSTER)" "$(APP_NAME)" "$(AWS_REGION)"
 
-airbrake: # Notify Airbrake that we have made a new deployment
-	curl -X POST -H "Content-Type: application/json" -d "{ \"environment\":\"${AIRBRAKE_ENVIRONMENT}\", \"username\":\"${AWS_ACCOUNT}\", \"repository\":\"${AIRBRAKE_REPOSITORY}\", \"revision\":\"${GIT_SHA}\", \"version\": \"${GIT_TAG}\" }" "https://airbrake.io/api/v4/projects/${AIRBRAKE_PROJECT_ID}/deploys?key=${AIRBRAKE_PROJECT_KEY}"
+#airbrake: # Notify Airbrake that we have made a new deployment
+#	curl -X POST -H "Content-Type: application/json" -d "{ \"environment\":\"${AIRBRAKE_ENVIRONMENT}\", \"username\":\"${AWS_ACCOUNT}\", \"repository\":\"${AIRBRAKE_REPOSITORY}\", \"revision\":\"${GIT_SHA}\", \"version\": \"${GIT_TAG}\" }" "https://airbrake.io/api/v4/projects/${AIRBRAKE_PROJECT_ID}/deploys?key=${AIRBRAKE_PROJECT_KEY}"
