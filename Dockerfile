@@ -2,6 +2,12 @@ FROM alpine:latest
 
 MAINTAINER Oliver Hawkins "hawkinso@parliament.uk"
 
+ARG MSOA_DB_HOST
+ARG MSOA_DB_PORT
+ARG MSOA_DB_NAME
+ARG MSOA_DB_USERNAME
+ARG MSOA_DB_PASSWORD
+
 COPY . /app
 
 WORKDIR /app
