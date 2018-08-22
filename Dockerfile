@@ -21,7 +21,5 @@ RUN apk update && \
     pip3 install -r requirements.txt && \
     apk --purge del .build-deps
 
-COPY . .
-
 ENV LISTEN_PORT=3001
 EXPOSE 3001

@@ -2,9 +2,8 @@
 __pycache__/
 _production/
 node_modules/
-# Types
-#*.sh
 
 # Files
 .DS_Store
 db.env
+start_dev.sh
