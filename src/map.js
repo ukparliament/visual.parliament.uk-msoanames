@@ -376,6 +376,7 @@ const createFormFactory = (app) => {
 
 // Main ----------------------------------------------------------------------
 
+console.log("Hello Noel. This version uses UWSGI.")
 const map = createMap();
 const app = createApp(map);
 app.run();

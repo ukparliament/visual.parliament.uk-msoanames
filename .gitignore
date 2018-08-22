@@ -1,8 +1,7 @@
 # Directories
 __pycache__/
+_production/
 node_modules/
-production/
-
 # Types
 #*.sh
 

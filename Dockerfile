@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM tiangolo/uwsgi-nginx-flask:python3.6-alpine3.7
 
 MAINTAINER Oliver Hawkins "hawkinso@parliament.uk"
 
@@ -23,6 +23,5 @@ RUN apk update && \
 
 COPY . .
 
+ENV LISTEN_PORT=3001
 EXPOSE 3001
-
-CMD ["python3", "app.py"]
