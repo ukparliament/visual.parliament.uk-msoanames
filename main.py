@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Prototype Flask app for MSOA names
+""" Flask server component for MSOA names."""
 
 # Imports --------------------------------------------------------------------
 
@@ -7,7 +7,6 @@ import os
 import psycopg2
 
 from flask import Flask
-from flask import g
 from flask import redirect
 from flask import render_template
 from flask import request
@@ -29,11 +28,19 @@ MSOA_DB_PASSWORD = os.environ['MSOA_DB_PASSWORD']
 # Routes ---------------------------------------------------------------------
 
 @app.route('/')
-def map():
+def index():
+    """Render the index page."""
+    return render_template('index.html')
+
+@app.route('/map')
+def msoas():
+    """Render the MSOA map."""
     return render_template('map.html')
 
 @app.route('/submit', methods=['GET', 'POST'])
 def submit():
+
+    """Handle submitted suggestions."""
 
     # Redirect to the map if not a POST request
     if request.method != 'POST':
@@ -49,7 +56,8 @@ def submit():
 
     # Reject request if form values do not have expected characteristics
     bad_request = Response('{"error": "Bad request"}',
-        status = 400, mimetype="application/json")
+                           status=400,
+                           mimetype="application/json")
 
     for k in form_keys:
         if k not in request.form:
@@ -74,12 +82,12 @@ def submit():
             suggestion,
             reason)
         VALUES(%s, %s, %s, %s, %s, %s);''',
-            (request.remote_addr,
-            request.form['msoa11cd'],
-            request.form['msoa11nm'],
-            request.form['msoa11hclnm'],
-            request.form['suggestion'],
-            request.form['reason']))
+                (request.remote_addr,
+                 request.form['msoa11cd'],
+                 request.form['msoa11nm'],
+                 request.form['msoa11hclnm'],
+                 request.form['suggestion'],
+                 request.form['reason']))
     con.commit()
     cur.close()
     con.close()
@@ -90,16 +98,17 @@ def submit():
         "msoa11hclnm": "{3}",
         "suggestion": "{4}",
         "reason": "{5}"}}'''.format(
-        request.remote_addr,
-        request.form['msoa11cd'],
-        request.form['msoa11nm'],
-        request.form['msoa11hclnm'],
-        request.form['suggestion'],
-        request.form['reason'])
+            request.remote_addr,
+            request.form['msoa11cd'],
+            request.form['msoa11nm'],
+            request.form['msoa11hclnm'],
+            request.form['suggestion'],
+            request.form['reason'])
 
 # Database -------------------------------------------------------------------
 
 def connect():
+    """Connect to Postgres database."""
     con = psycopg2.connect( \
         database=MSOA_DB_NAME,
         user=MSOA_DB_USERNAME,
@@ -107,11 +116,10 @@ def connect():
         host=MSOA_DB_HOST,
         port=MSOA_DB_PORT,
         connect_timeout=20)
-
     return con
 
 # Main -----------------------------------------------------------------------
 
 if __name__ == "__main__":
-    # app.debug = True
+    app.debug = False
     app.run(host='0.0.0.0', port="3001")

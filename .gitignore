@@ -5,5 +5,7 @@ node_modules/
 
 # Files
 .DS_Store
+.eslintrc.json
+.pylintrc
 db.env
 start_dev.sh

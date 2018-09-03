@@ -5,126 +5,126 @@
 /* Map styles ------------------------------------------------------------- */
 
 body {
-	margin:0;
-	padding:0;
+    margin:0;
+    padding:0;
 }
 
 #map {
-	position:absolute;
-	top:0;
-	bottom:0;
-	width:100%;
+    position:absolute;
+    top:0;
+    bottom:0;
+    width:100%;
 }
 
 .mapboxgl-popup-content {
-	margin: 0;
-	padding: 0;
-	background: #ffffff;
-	/* border: 1px solid #d06040; */
-	border-radius: 6px;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    /* border: 1px solid #d06040; */
+    border-radius: 6px;
 }
 
 /* Form styles ------------------------------------------------------------ */
 
 .formbox {
-	margin: 0;
-	padding: 10px;
-	width: 250px;
-	/*border: 1px solid #c0c0c0;*/
+    margin: 0;
+    padding: 10px;
+    width: 250px;
+    /*border: 1px solid #c0c0c0;*/
 }
 
 #contentbox {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 #namebox {
-	font-family: 'Open Sans', sans-serif;
-	margin: 0 0 10px 0;
-	padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0 0 10px 0;
+    padding: 0;
 }
 
 #namebox p {
-	margin: 0;
-	padding: 0
-	font-family: inherit;
-	font-size: 14pt;
-	font-weight: bold;
-	line-height: 1.3em;
-	color: #d06040;
+    margin: 0;
+    padding: 0
+    font-family: inherit;
+    font-size: 14pt;
+    font-weight: bold;
+    line-height: 1.3em;
+    color: #d06040;
 }
 
 #suggestion {
     margin: 0 0 5px 0;
-	padding: 4px;
+    padding: 4px;
     width: 96%;
     border: 1px solid #c0c0c0;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 11pt;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11pt;
 }
 
 #suggestion:focus {
-	outline: none !important;
-	box-shadow: none;
-	border-color: #d83808;
-	background: #fff3ef;
+    outline: none !important;
+    box-shadow: none;
+    border-color: #d83808;
+    background: #fff3ef;
 }
 
 #reason {
     margin: 5px 0 5px 0;
-	padding: 4px;
+    padding: 4px;
     width: 96%;
     height: 120px;
     resize: none;
     border: 1px solid #c0c0c0;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 11pt;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11pt;
 }
 
 #reason:focus {
-	outline: none !important;
-	box-shadow: none;
-	border-color: #d83808;
-	background: #fff3ef;
+    outline: none !important;
+    box-shadow: none;
+    border-color: #d83808;
+    background: #fff3ef;
 }
 
 .buttonbox {
-	padding: 0;
-	margin: 0;
-	margin-bottom: 10px;
-	text-align: center;
-	font-family: 'Open Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
 }
 
 button {
-	margin: 0;
-	height: 30px;
-	width: 122px;
-	font-family: inherit;
-	font-size: 11pt;
-	font-weight: bold;
-	border-radius: 6px;
-	background: #ffffff;
-	color: #909090;
-	border: 1px solid #c0c0c0;
+    margin: 0;
+    height: 30px;
+    width: 122px;
+    font-family: inherit;
+    font-size: 11pt;
+    font-weight: bold;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #909090;
+    border: 1px solid #c0c0c0;
 }
 
 button:active {
-	background: #ffffff;
-	color: #d06040;
-	border-color: #d06040;
+    background: #ffffff;
+    color: #d06040;
+    border-color: #d06040;
 }
 
 button.sendbutton {
-	margin-right: 2px;
-	color: #ffffff;
-	background: #c0c0c0;
-	border-color: #c0c0c0;
+    margin-right: 2px;
+    color: #ffffff;
+    background: #c0c0c0;
+    border-color: #c0c0c0;
 }
 
 button.sendbutton:active {
-	background: #ffffff;
-	color: #d06040;
+    background: #ffffff;
+    color: #d06040;
 }
 
 .statusbox {
@@ -132,39 +132,39 @@ button.sendbutton:active {
 }
 
 .statusbox p {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 11pt;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11pt;
 }
 .statusbox button {
-	width: 246px;
-	margin-right: 2px;
-	color: #ffffff;
-	background: #d06040;;
-	border-color: #d06040;;
+    width: 246px;
+    margin-right: 2px;
+    color: #ffffff;
+    background: #d06040;
+    border-color: #d06040;
 }
 
 .statusbox button:active {
-	background: #ffffff;
-	color: #d06040;
+    background: #ffffff;
+    color: #d06040;
 }
 
 #statusmsg {
-	font-weight: bold;
-	color: #d06040;
+    font-weight: bold;
+    color: #d06040;
 }
 
 /* Messages ----------------------------------------------------------------*/
 
 #messagebox {
-	margin: 0;
-	padding: 0;
-	border: 0px none #ffffff;
-	font-family: 'Open Sans', sans-serif;
-	/* border-top: 1px solid #c0c0c0; */
+    margin: 0;
+    padding: 0;
+    border: 0px none #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    /* border-top: 1px solid #c0c0c0; */
 }
 
 #messagebox p {
-	margin: 0;
-	padding: 0;
-	font-size: 10pt;
+    margin: 0;
+    padding: 0;
+    font-size: 10pt;
 }

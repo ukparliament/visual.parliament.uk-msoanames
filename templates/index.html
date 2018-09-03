@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MSOA Names</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="/static/msoa.bundle.js"></script>
+    <link href="/static/index.css" rel="stylesheet" />
+</head>
+<body>
+    <header><img id="portcullis" src="/static/portcullis.svg" /></header>
+    <div id="main">
+        <div id="column">
+            <h1>Help us name your neighbourhood</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at bibendum dolor, quis luctus lectus. Nunc elementum tellus vitae laoreet maximus. Pellentesque non massa sed diam iaculis tempor. Phasellus tempus nisl non ligula maximus, vel suscipit elit tristique. Ut malesuada quam et urna elementum gravida. Vestibulum at tincidunt orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse vel porta nulla. In neque ante, consectetur eget sodales at, molestie vel augue. Proin felis elit, eleifend eget lacinia eget, aliquam eget velit. Ut in mi neque.</p>
+            <p>Proin varius viverra metus a auctor. Integer eu egestas libero. Integer sollicitudin eu nunc vel ullamcorper. Proin in vulputate leo. Phasellus condimentum tempor finibus. Mauris eget velit consectetur, pretium lectus nec, vulputate est. Phasellus eleifend libero id aliquam convallis. Vivamus mattis vulputate lorem a convallis. Integer lorem nulla, gravida eu nibh quis, dictum interdum ipsum. Etiam bibendum, tortor congue ullamcorper consectetur, lectus lectus varius dui, sed placerat mauris nibh vitae elit. Proin dui eros, tempor vel blandit ut, bibendum vitae magna.</p>
+            <div class="accept">
+                <form id="acceptform" action="/map" method="GET">
+                    <input id="long" name="long" type="hidden" value="-0.116773" />
+                    <input id="lat" name="lat" type="hidden" value="51.510357" />
+                    <button id="acceptbutton" class="acceptbutton" type="submit">
+                        Accept and continue
+                    </button>
+                </form>
+            </div>
+        </div>
+        <nav></nav>
+        <aside></aside>
+    </div>
+    <footer>Copyright &copy; 2018 House of Commons Library</footer>
+    <script>
+    msoa.handleLocation();
+    </script>
+</body>
+</html>

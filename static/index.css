@@ -1,0 +1,171 @@
+/* Imports -----------------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+/* Page structure ----------------------------------------------------------*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12pt;
+    background: #ffffff;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 15px 5px 15px 5px;
+    border: none;
+    background: #d06040;
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#main {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row;
+}
+
+#main > #column {
+    margin: 5px;
+    padding: 10px;
+    max-width: 640px;
+    border: none;
+    background: #ffffff;
+    flex: 3 1 auto;
+    order: 2;
+}
+
+#main > nav {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: #ffffff;
+    flex: 1 6 10%;
+    order: 1;
+}
+
+#main > aside {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: #ffffff;
+    flex: 1 6 10%;
+    order: 3;
+}
+
+footer {
+    display: block;
+    margin: 0px;
+    margin-bottom: 14px;
+    padding: 5px;
+    border: none;
+    text-align: center;
+    color: #00000;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+/* Text elements */
+article {
+    margin: 0;
+    padding: 0;
+    padding-top: 36px;
+    padding-bottom: 36px;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 27px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    color: #d06040;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 24px;
+    line-height: 1.45;
+    color: #000000;
+}
+
+img {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+#portcullis {
+    height: 100px;
+}
+
+.accept {
+    margin: 20px 0px 20px 0px;
+    padding: 0;
+    text-align: center;
+}
+
+button {
+    margin: 0;
+    height: 40px;
+    font-family: inherit;
+    font-size: 11pt;
+    font-weight: bold;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #ffffff;
+    background: #d06040;
+    border: 1px solid #d06040;
+}
+
+button:active {
+    background: #ffffff;
+    color: #d06040;
+    border-color: #d06040;
+}
+
+/* Links */
+a:link,
+a:visited {
+    color: #404040;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a:hover,
+a:active {
+    color: #c0c0c0;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Media queries -----------------------------------------------------------*/
+@media all and (max-width: 640px) {
+    #main {
+        flex-direction: column;
+    }
+
+    #main > #column, #main > nav, #main > aside {
+    /* Return them to document order */
+        order: 0;
+    }
+
+    #main > nav, #main > aside {
+        min-height: 0px;
+        max-height: 0px;
+    }
+}
