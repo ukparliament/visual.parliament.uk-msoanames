@@ -1,20 +1,31 @@
 /* global mapboxgl */
 
 // Factories -----------------------------------------------------------------
-const createMap = (long, lat) => {
+const createMap = (long, lat, zoom) => {
 
-    const longitude = (long == null || long == false) ? -0.116773 : long;
-    const latitude = (lat == null || lat == false) ? 51.510357 : lat;
+    // Check the parameters are sane and set to defaults if not
+    const getFloatParam = (val, defVal) => {
+        if (val == null || val == false || isNaN(parseFloat(val))) {
+            return defVal;
+        } else {
+            return parseFloat(val);
+        }
+    }
 
+    const longitude = getFloatParam(long, -0.116773);
+    const latitude = getFloatParam(lat, 51.510357);
+    const zoomLevel = getFloatParam(zoom, 12.5);
+
+    // Create the map
     mapboxgl.accessToken =
         "pk.eyJ1IjoiaGF3a2luc29ob2NsIiwiYSI6IjNmMmZkMzY4MTUw" +
         "ZGNiMjE4NTExOWQwNDBjNzg4NjAzIn0.bv8BBlUo7MtQR544YviGZQ";
 
     const map = new mapboxgl.Map({
         container: "map",
-        style: "mapbox://styles/hawkinsohocl/cjkcm2ii04c9u2sqgjhzr0hwt",
+        style: "mapbox://styles/hawkinsohocl/cjmt6cyr04bbm2snxspzo6m9o",
         center: [longitude, latitude],
-        zoom: 12.5
+        zoom: zoomLevel
     });
 
     return map;
@@ -39,14 +50,14 @@ const createApp = (map) => ({
 
             map.addSource("msoa", {
                 "type": "vector",
-                "url": "mapbox://hawkinsohocl.dqzrnokh"
+                "url": "mapbox://hawkinsohocl.7d2olmn0"
             });
 
             map.addLayer({
                 "id": "msoa-highlight",
                 "type": "fill",
                 "source": "msoa",
-                "source-layer": "msoa-2011-polygons-hcl-0qsdgc",
+                "source-layer": "msoa-2011-polygons-hcl-avpbtg",
                 "paint": {
                     "fill-color": "#d83808",
                     "fill-opacity": 0
@@ -58,10 +69,20 @@ const createApp = (map) => ({
 
         map.on("click", createClickHandler(this));
 
+        // Remove any open suggestion when the map zooms out too far
         map.on("zoom", () => {
             if (map.getZoom() < 8 && this.hasSuggestion()) {
                 this.closeAndRemoveSuggestion();
             }
+        });
+
+        // Update the query string with th current map position
+        map.on("moveend", () => {
+            const c = map.getCenter();
+            const z = map.getZoom();
+            const url = `/map?long=${c.lng}&lat=${c.lat}&zoom=${z}`
+        	history.replaceState(null, null, url);
+            console.log();
         });
 
         return this;

@@ -4,8 +4,8 @@ import { createMap , createApp } from "./map.js";
 const msoa = {};
 msoa.handleLocation = handleLocation;
 msoa.getQueryString = getQueryString;
-msoa.startMap = (long, lat) => {
-    const map = createMap(long, lat);
+msoa.startMap = (long, lat, zoom) => {
+    const map = createMap(long, lat, zoom);
     const app = createApp(map);
     app.run();
 };

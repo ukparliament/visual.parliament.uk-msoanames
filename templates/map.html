@@ -14,7 +14,8 @@
     <script>
     const long = msoa.getQueryString("long");
     const lat = msoa.getQueryString("lat");
-    msoa.startMap(long, lat);
+    const zoom = msoa.getQueryString("zoom");
+    msoa.startMap(long, lat, zoom);
     </script>
 </body>
 </html>

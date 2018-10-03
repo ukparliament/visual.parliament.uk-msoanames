@@ -141,14 +141,14 @@ button:active {
 /* Links */
 a:link,
 a:visited {
-    color: #404040;
-    text-decoration: underline;
+    color: #d06040;
+    text-decoration: none;
     font-weight: bold;
 }
 
 a:hover,
 a:active {
-    color: #c0c0c0;
+    color: #d06040;
     text-decoration: underline;
     font-weight: bold;
 }
