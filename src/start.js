@@ -8,11 +8,11 @@ const handleLocation = () => {
             (position) => {
                 acceptform.long.value = position.coords.longitude.toFixed(6);
                 acceptform.lat.value = position.coords.latitude.toFixed(6);
-                acceptbutton.innerHTML = "Accept and go to my location";
+                acceptbutton.innerHTML = "Go to my location";
             },
             (error) => {
                 if (error.code == error.PERMISSION_DENIED) {
-                    acceptbutton.innerHTML = "Accept and continue";
+                    acceptbutton.innerHTML = "Continue";
                 }
             },
             { maximumAge: 300000 }

@@ -24,6 +24,33 @@ body {
     border-radius: 6px;
 }
 
+#infobox {
+    position: absolute;
+    margin: 0px;
+    padding: 10px;
+    width: 220px;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11pt;
+    background: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+#infobox a:link, a:visited {
+    color: #d06040;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#infobox a:hover, a:active {
+    color: #d06040;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
 /* Form styles ------------------------------------------------------------ */
 
 .formbox {
@@ -74,7 +101,7 @@ body {
     margin: 5px 0 5px 0;
     padding: 4px;
     width: 96%;
-    height: 120px;
+    height: 100px;
     resize: none;
     border: 1px solid #c0c0c0;
     font-family: 'Open Sans', sans-serif;
