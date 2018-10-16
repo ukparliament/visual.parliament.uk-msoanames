@@ -347,7 +347,7 @@ const createFormFactory = (app) => {
     return (properties) => {
 
         const suggestion = "Your suggestion (required)";
-        const reason = "Why you think this would be a good name";
+        const reason = "Why you think this would be a better name";
         const message = "Please note that we cannot accept suggestions for " +
             "boundary changes.";
 
