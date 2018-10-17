@@ -44,7 +44,7 @@ def submit():
 
     # Redirect to the map if not a POST request
     if request.method != 'POST':
-        return redirect(url_for('map'))
+        return redirect(url_for('msoas'))
 
     form_keys = [
         'msoa11cd',
