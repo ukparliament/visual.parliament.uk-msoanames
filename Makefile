@@ -55,7 +55,7 @@ checkout_to_release:
 
 build: # Using the variables defined above, run `docker build`, tagging the image and passing in the required arguments.
 	docker build -t $(IMAGE):$(VERSION) -t $(IMAGE):latest \
-  --build-arg MSOA_DB_HOST=${MSOA_DB_HOST} \
+  --build-arg MSOA_DB_HOST=visual-msoanames.web1devci.org \
 	.
 
 
