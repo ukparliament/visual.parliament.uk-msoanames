@@ -8,6 +8,8 @@ ARG MSOA_DB_NAME
 ARG MSOA_DB_USERNAME
 ARG MSOA_DB_PASSWORD
 
+ENV MSOA_DB_HOST visual-msoanames.web1devci.org
+
 COPY . /app
 
 WORKDIR /app
