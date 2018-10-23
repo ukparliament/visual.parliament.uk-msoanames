@@ -10,6 +10,8 @@
 #   detailed below.
 ##
 
+MSOA_DB_HOST = visual-msoanames.web1devci.org
+
 # App name used to created our Docker image. This name is important in the context of the AWS docker repository.
 APP_NAME = parliamentukmsoanames
 
