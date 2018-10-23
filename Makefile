@@ -73,9 +73,7 @@ build: # Using the variables defined above, run `docker build`, tagging the imag
 run: # Run the Docker image we have created, mapping the HOST_PORT and CONTAINER_PORT
 	docker run --rm -p $(HOST_PORT):$(CONTAINER_PORT) $(IMAGE)
 
-test: # Build the docker image in development mode, using a test PARLIAMENT_BASE_URL. Then run rake within a Docker container using our image.
-	RACK_ENV=development make build
-	docker run --rm $(IMAGE):latest bundle exec rake
+
 
 push: # Push the Docker images we have build to the configured Docker repository (Run in GoCD to push the image to AWS)
 	docker push $(IMAGE):$(VERSION)
