@@ -6,7 +6,7 @@
 
 ##
 # ENVIRONMENT VARIABLES
-#   We use a number of environment  variables to customer the Docker image createad at build time. These are set and
+#   We use a number of environment  variables to customise the Docker image createad at build time. These are set and
 #   detailed below.
 ##
 
@@ -52,7 +52,9 @@ checkout_to_release:
 	git checkout -b release $(REL_TAG)
 
 build: # Using the variables defined above, run `docker build`, tagging the image and passing in the required arguments.
-	docker build -t $(IMAGE):$(VERSION) -t $(IMAGE):latest .
+	docker build -t $(IMAGE):$(VERSION) -t $(IMAGE):latest \
+  --build-arg MSOA_DB_HOST=${MSOA_DB_HOST}
+	.
 
 
 
