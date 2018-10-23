@@ -55,17 +55,11 @@ checkout_to_release:
 
 build: # Using the variables defined above, run `docker build`, tagging the image and passing in the required arguments.
 	docker build -t $(IMAGE):$(VERSION) -t $(IMAGE):latest \
-		--build-arg PARLIAMENT_API_VERSION=$(PARLIAMENT_API_VERSION) \
-		--build-arg OPENSEARCH_DESCRIPTION_URL=$(OPENSEARCH_DESCRIPTION_URL) \
-		--build-arg OPENSEARCH_AUTH_TOKEN=$(OPENSEARCH_AUTH_TOKEN) \
-		--build-arg AIRBRAKE_PROJECT_ID=$(AIRBRAKE_PROJECT_ID) \
-		--build-arg AIRBRAKE_PROJECT_KEY=$(AIRBRAKE_PROJECT_KEY) \
-		--build-arg BANDIERA_URL=$(BANDIERA_URL) \
-		--build-arg APPLICATION_INSIGHTS_INSTRUMENTATION_KEY=$(APPLICATION_INSIGHTS_INSTRUMENTATION_KEY) \
-		--build-arg RAILS_LOG_TO_STDOUT=$(RAILS_LOG_TO_STDOUT) \
-		--build-arg RACK_ENV=$(RACK_ENV) \
-		--build-arg GIT_SHA="$(GIT_SHA)" \
-		--build-arg GIT_TAG="$(GIT_TAG)" \
+		--build-arg MSOA_DB_HOST=$(MSOA_DB_HOST) \
+		--build-arg MSOA_DB_PORT=$(MSOA_DB_PORT) \
+		--build-arg MSOA_DB_NAME=$(MSOA_DB_NAME) \
+		--build-arg MSOA_DB_USERNAME=$(MSOA_DB_USERNAME) \
+		--build-arg MSOA_DB_PASSWORD=$(MSOA_DB_PASSWORD) \
 		.
 
 
