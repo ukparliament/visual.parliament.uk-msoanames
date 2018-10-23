@@ -38,10 +38,10 @@ TENABLEIO_REGISTRY = cloud.flawcheck.com
 TENABLEIO_REPO = web1live
 
 # Airbrake.io
-AIRBRAKE_PROJECT_ID = $(shell credstash get thorney/airbrake_id)
-AIRBRAKE_PROJECT_KEY = $(shell credstash get thorney/airbrake_key)
-AIRBRAKE_ENVIRONMENT = $(RACK_ENV)
-AIRBRAKE_REPOSITORY = https://github.com/ukparliament/thorney
+#AIRBRAKE_PROJECT_ID = $(shell credstash get thorney/airbrake_id)
+#AIRBRAKE_PROJECT_KEY = $(shell credstash get thorney/airbrake_key)
+#AIRBRAKE_ENVIRONMENT = $(RACK_ENV)
+#AIRBRAKE_REPOSITORY = https://github.com/ukparliament/thorney
 GIT_SHA = $(or $(GO_REVISION), unknown)
 GIT_TAG = $(or $(shell git describe --tags --exact-match 2> /dev/null), unknown)
 AWS_ACCOUNT ?= unknown
@@ -65,7 +65,7 @@ HOST_PORT = 80
 
 GITHUB_API=https://api.github.com
 ORG=ukparliament
-REPO=thorney
+REPO=visual.parliament.uk-msoanames
 LATEST_REL=$(GITHUB_API)/repos/$(ORG)/$(REPO)/releases
 REL_TAG=$(shell curl -s $(LATEST_REL) | jq -r '.[0].tag_name')
 
