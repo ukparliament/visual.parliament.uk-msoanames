@@ -20,43 +20,22 @@ AWS_ACCOUNT_ID ?= $(or $(shell aws sts get-caller-identity --output text --query
 # A counter that represents the build number within GoCD. Used to tag and version our images.
 GO_PIPELINE_COUNTER ?= unknown
 
-# Which Rack environment will our docker image be configured to run in?
-RACK_ENV ?= development
+
 
 # VERSION is used to tag the Docker images
 VERSION = 0.0.$(GO_PIPELINE_COUNTER)
 
 # ECS related variables used to build our image name
 # Cluster: list all clusters to update, separated by semicolons
-ECS_CLUSTER = ecs-routing
+ECS_CLUSTER = ecs-apps
 AWS_REGION = eu-west-1
 
-# Tenable.io
-TENABLEIO_USER ?= user # passed from an envvar in the CDP
-TENABLEIO_PASSWORD ?= password # passed from an envvar in the CDP
-TENABLEIO_REGISTRY = cloud.flawcheck.com
-TENABLEIO_REPO = web1live
 
-# Airbrake.io
-#AIRBRAKE_PROJECT_ID = $(shell credstash get thorney/airbrake_id)
-#AIRBRAKE_PROJECT_KEY = $(shell credstash get thorney/airbrake_key)
-#AIRBRAKE_ENVIRONMENT = $(RACK_ENV)
-#AIRBRAKE_REPOSITORY = https://github.com/ukparliament/thorney
-GIT_SHA = $(or $(GO_REVISION), unknown)
-GIT_TAG = $(or $(shell git describe --tags --exact-match 2> /dev/null), unknown)
-AWS_ACCOUNT ?= unknown
-
-GTM_KEY = $(shell credstash get common/gtm_key)
-SECRET_KEY_BASE = $(shell credstash get common/secret_key_base)
 
 # The name of our Docker image
 IMAGE = $(AWS_ACCOUNT_ID).dkr.ecr.$(AWS_REGION).amazonaws.com/$(APP_NAME)
 
-# Container port used for mapping when running our Docker image.
-CONTAINER_PORT = 3000
 
-# Host port used for mapping when running our Docker image.
-HOST_PORT = 80
 
 ##
 # MAKE TASKS
@@ -73,40 +52,20 @@ checkout_to_release:
 	git checkout -b release $(REL_TAG)
 
 build: # Using the variables defined above, run `docker build`, tagging the image and passing in the required arguments.
-	docker build -t $(IMAGE):$(VERSION) -t $(IMAGE):latest \
-		--build-arg PARLIAMENT_API_VERSION=$(PARLIAMENT_API_VERSION) \
-		--build-arg OPENSEARCH_DESCRIPTION_URL=$(OPENSEARCH_DESCRIPTION_URL) \
-		--build-arg OPENSEARCH_AUTH_TOKEN=$(OPENSEARCH_AUTH_TOKEN) \
-		--build-arg AIRBRAKE_PROJECT_ID=$(AIRBRAKE_PROJECT_ID) \
-		--build-arg AIRBRAKE_PROJECT_KEY=$(AIRBRAKE_PROJECT_KEY) \
-		--build-arg BANDIERA_URL=$(BANDIERA_URL) \
-		--build-arg APPLICATION_INSIGHTS_INSTRUMENTATION_KEY=$(APPLICATION_INSIGHTS_INSTRUMENTATION_KEY) \
-		--build-arg RAILS_LOG_TO_STDOUT=$(RAILS_LOG_TO_STDOUT) \
-		--build-arg RACK_ENV=$(RACK_ENV) \
-		--build-arg GIT_SHA="$(GIT_SHA)" \
-		--build-arg GIT_TAG="$(GIT_TAG)" \
-		--build-arg MSOA_DB_HOST="$(MSOA_DB_HOST)" \
-		--build-arg MSOA_DB_PORT="$(MSOA_DB_PORT)" \
-		--build-arg MSOA_DB_NAME="$(MSOA_DB_NAME)" \
-		--build-arg MSOA_DB_USERNAME="$(MSOA_DB_USERNAME)" \
-		--build-arg MSOA_DB_PASSWORD="$(MSOA_DB_PASSWORD)" \
-		.
+	docker build -t $(IMAGE):$(VERSION) -t $(IMAGE):latest
+
+
 
 run: # Run the Docker image we have created, mapping the HOST_PORT and CONTAINER_PORT
 	docker run --rm -p $(HOST_PORT):$(CONTAINER_PORT) $(IMAGE)
 
-#test: # Build the docker image in development mode, using a test PARLIAMENT_BASE_URL. Then run rake within a Docker container using our image.
-#	RACK_ENV=development make build
-#	docker run --rm $(IMAGE):latest bundle exec rake
+
 
 push: # Push the Docker images we have build to the configured Docker repository (Run in GoCD to push the image to AWS)
 	docker push $(IMAGE):$(VERSION)
 	docker push $(IMAGE):latest
 
-scan-image:
-	docker login -u $(TENABLEIO_USER) -p $(TENABLEIO_PASSWORD) $(TENABLEIO_REGISTRY)
-	docker tag $(IMAGE):$(VERSION) $(TENABLEIO_REGISTRY)/$(TENABLEIO_REPO)/$(APP_NAME):$(VERSION)
-	docker push $(TENABLEIO_REGISTRY)/$(TENABLEIO_REPO)/$(APP_NAME):$(VERSION)
+
 
 rmi: # Remove local versions of our images.
 	docker rmi -f $(IMAGE):$(VERSION)
@@ -116,6 +75,3 @@ rmi: # Remove local versions of our images.
 deploy-ecs: # Deploy our new Docker image onto an AWS cluster (Run in GoCD to deploy to various environments).
 	./aws_ecs/register-task-definition.sh $(APP_NAME)
 	./aws_ecs/update-services.sh "$(ECS_CLUSTER)" "$(APP_NAME)" "$(AWS_REGION)"
-
-#airbrake: # Notify Airbrake that we have made a new deployment
-#	curl -X POST -H "Content-Type: application/json" -d "{ \"environment\":\"${AIRBRAKE_ENVIRONMENT}\", \"username\":\"${AWS_ACCOUNT}\", \"repository\":\"${AIRBRAKE_REPOSITORY}\", \"revision\":\"${GIT_SHA}\", \"version\": \"${GIT_TAG}\" }" "https://airbrake.io/api/v4/projects/${AIRBRAKE_PROJECT_ID}/deploys?key=${AIRBRAKE_PROJECT_KEY}"
