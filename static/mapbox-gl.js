@@ -36,4 +36,3 @@ define(["./chunk1.js"],function(t){"use strict";var e=t.createCommonjsModule(fun
 return mapboxgl;
 
 })));
-//# sourceMappingURL=mapbox-gl.js.map

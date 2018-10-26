@@ -60,6 +60,7 @@ build: # Using the variables defined above, run `docker build`, tagging the imag
 		--build-arg MSOA_DB_NAME=$(MSOA_DB_NAME) \
 		--build-arg MSOA_DB_USERNAME=$(MSOA_DB_USERNAME) \
 		--build-arg MSOA_DB_PASSWORD=$(MSOA_DB_PASSWORD) \
+		--build-arg MSOA_FLASK_KEY=$(MSOA_FLASK_KEY) \
 		.
 
 

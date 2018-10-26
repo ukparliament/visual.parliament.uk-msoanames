@@ -16,7 +16,8 @@
     const long = msoa.getQueryString("long");
     const lat = msoa.getQueryString("lat");
     const zoom = msoa.getQueryString("zoom");
-    msoa.startMap(long, lat, zoom);
+    const csrf = "{{ csrf_token() }}";
+    msoa.startMap(long, lat, zoom, csrf);
     </script>
 </body>
 </html>

@@ -12,10 +12,8 @@ from flask import render_template
 from flask import request
 from flask import Response
 from flask import url_for
-
-# Application ----------------------------------------------------------------
-
-app = Flask(__name__)
+from flask import abort
+from flask_wtf.csrf import CSRFProtect
 
 # Constants ------------------------------------------------------------------
 
@@ -24,10 +22,21 @@ MSOA_DB_PORT = os.environ['MSOA_DB_PORT']
 MSOA_DB_NAME = os.environ['MSOA_DB_NAME']
 MSOA_DB_USERNAME = os.environ['MSOA_DB_USERNAME']
 MSOA_DB_PASSWORD = os.environ['MSOA_DB_PASSWORD']
+MSOA_FLASK_KEY = os.environ['MSOA_FLASK_KEY']
+
+# Application ----------------------------------------------------------------
+
+app = Flask(__name__)
+app.secret_key = MSOA_FLASK_KEY
+
+# CSRF -----------------------------------------------------------------------
+
+csrf = CSRFProtect(app)
 
 # Routes ---------------------------------------------------------------------
 
 @app.route('/')
+@csrf.exempt
 def index():
     """Render the index page."""
     return render_template('index.html')
@@ -71,39 +80,47 @@ def submit():
         return bad_request
 
     # Otherwise write the data to the database
-    con = connect()
-    cur = con.cursor()
-    cur.execute('''
-        INSERT INTO suggestions (
-            ip,
-            msoa11cd,
-            msoa11nm,
-            msoa11hclnm,
-            suggestion,
-            reason)
-        VALUES(%s, %s, %s, %s, %s, %s);''',
-                (request.remote_addr,
-                 request.form['msoa11cd'],
-                 request.form['msoa11nm'],
-                 request.form['msoa11hclnm'],
-                 request.form['suggestion'],
-                 request.form['reason']))
-    con.commit()
-    cur.close()
-    con.close()
-    return '''{{
-        "msoa11cd": "{0}",
-        "msoa11cd": "{1}",
-        "msoa11nm": "{2}",
-        "msoa11hclnm": "{3}",
-        "suggestion": "{4}",
-        "reason": "{5}"}}'''.format(
-            request.remote_addr,
-            request.form['msoa11cd'],
-            request.form['msoa11nm'],
-            request.form['msoa11hclnm'],
-            request.form['suggestion'],
-            request.form['reason'])
+    try:
+        con = connect()
+        cur = con.cursor()
+        cur.execute('''
+            INSERT INTO suggestions (
+                ip,
+                msoa11cd,
+                msoa11nm,
+                msoa11hclnm,
+                suggestion,
+                reason)
+            VALUES(%s, %s, %s, %s, %s, %s);''',
+                    (request.remote_addr,
+                     request.form['msoa11cd'],
+                     request.form['msoa11nm'],
+                     request.form['msoa11hclnm'],
+                     request.form['suggestion'],
+                     request.form['reason']))
+        con.commit()
+        cur.close()
+        con.close()
+        return '''{{
+            "msoa11cd": "{0}",
+            "msoa11cd": "{1}",
+            "msoa11nm": "{2}",
+            "msoa11hclnm": "{3}",
+            "suggestion": "{4}",
+            "reason": "{5}"}}'''.format(
+                request.remote_addr,
+                request.form['msoa11cd'],
+                request.form['msoa11nm'],
+                request.form['msoa11hclnm'],
+                request.form['suggestion'],
+                request.form['reason'])
+
+    except psycopg2.Error as e:
+        err_msg = 'Could not connect to the database'
+        if e.pgcode is not None:
+            err_msg = e.diag.message_primary
+        app.logger.error('Error in database operation: {0}'.format(err_msg))
+        abort(500)
 
 # Database -------------------------------------------------------------------
 

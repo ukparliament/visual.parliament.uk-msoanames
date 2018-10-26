@@ -31,10 +31,11 @@ const createMap = (long, lat, zoom) => {
     return map;
 };
 
-const createApp = (map) => ({
+const createApp = (map, csrf) => ({
 
     suggestion: null,
     map: map,
+    csrf: csrf,
 
     run() {
 
@@ -116,6 +117,10 @@ const createApp = (map) => ({
 
     hasSuggestion() {
         return this.suggestion !== null;
+    },
+
+    getCSRF() {
+        return this.csrf;
     }
 });
 
@@ -300,26 +305,36 @@ const createFormFactory = (app) => {
 
         request.onload = () => {
 
-            if (app.hasSuggestion() && sid == app.getSuggestion().getId()) {
-                app.getSuggestion().endAnimation("All done!");
+            if (request.status == 200) {
+
+                if (app.hasSuggestion() && sid == app.getSuggestion().getId()) {
+                    app.getSuggestion().endAnimation("All done!");
+                }
+
+            } else {
+                app.getSuggestion().endAnimation(
+                    "Sorry, we could not record your suggestion.");
             }
         };
 
         request.ontimeout = () => {
 
             if (app.hasSuggestion() && sid == app.getSuggestion().getId()) {
-                app.getSuggestion().endAnimation("Could not reach the server.");
+                app.getSuggestion().endAnimation(
+                    "Sorry, we could not record your suggestion.");
             }
         };
 
         request.onerror = () => {
 
             if (app.hasSuggestion() && sid == app.getSuggestion().getId()) {
-                app.getSuggestion().endAnimation("Could not reach the server.");
+                app.getSuggestion().endAnimation(
+                    "Sorry, we could not record your suggestion.");
             }
         };
 
         request.open("POST", "/submit");
+        request.setRequestHeader("X-CSRFToken", app.getCSRF());
         request.send(formData);
     };
 
