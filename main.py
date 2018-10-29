@@ -122,6 +122,37 @@ def submit():
         app.logger.error('Error in database operation: {0}'.format(err_msg))
         abort(500)
 
+@app.route('/results')
+def results():
+
+    """Display the results."""
+
+    try:
+        results = {'suggestions': []}
+        con = connect()
+        cur = con.cursor()
+        cur.execute('''SELECT * FROM suggestions;''')
+        for row in cur.fetchall():
+            suggestion = {
+                'id': row[0],
+                'ip_addr': row[1],
+                'msoa_code': row[2],
+                'msoa_name': row[3],
+                'hcl_name': row[4],
+                'suggestion': row[5],
+                'reason': row[6],
+            }
+            results['suggestions'].append(suggestion)
+        cur.close()
+        con.close()
+        return render_template('results.html', results=results)
+    except psycopg2.Error as e:
+        err_msg = 'Could not connect to the database'
+        if e.pgcode is not None:
+            err_msg = e.diag.message_primary
+        app.logger.error('Error in database operation: {0}'.format(err_msg))
+        abort(500)
+
 # Database -------------------------------------------------------------------
 
 def connect():

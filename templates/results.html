@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MSOA Names</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="/static/results.css" rel="stylesheet" />
+</head>
+<body>
+    <header><img id="portcullis" src="/static/portcullis.svg" /></header>
+    <div id="main">
+        <div id="column">
+            <h1>Results</h1>
+            <table>
+                <tr>
+                    <th><b>Id</b></th>
+                    <th><b>IP Address</b></th>
+                    <th><b>Code</b></th>
+                    <th><b>Name</b></th>
+                    <th><b>HCL Name</b></th>
+                    <th><b>Suggestion</b></th>
+                    <th><b>Reason</b></th>
+                </tr>
+                {% for suggestion in results.suggestions %}
+                <tr>
+                    <td>{{suggestion.id}}</td>
+                    <td>{{suggestion.ip_addr}}</td>
+                    <td>{{suggestion.id}}</td>
+                    <td>{{suggestion.msoa_code}}</td>
+                    <td>{{suggestion.msoa_name}}</td>
+                    <td>{{suggestion.suggestion}}</td>
+                    <td>{{suggestion.reason}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <nav></nav>
+        <aside></aside>
+    </div>
+    <footer>Copyright &copy; 2018 House of Commons Library</footer>
+</body>
+</html>
