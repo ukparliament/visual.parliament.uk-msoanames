@@ -157,49 +157,6 @@ def results():
         app.logger.error('Error in database operation: {0}'.format(err_msg))
         abort(500)
 
-@app.route('/create')
-def create():
-    con = connect()
-    cur = con.cursor()
-    cur.execute('''
-        CREATE TABLE suggestions (
-            suggestion_id serial primary key,
-            ip varchar(64),
-            msoa11cd varchar(64),
-            msoa11nm varchar(64),
-            msoa11hclnm varchar(64),
-            suggestion varchar(64),
-            reason varchar(1024));
-        ''')
-    con.commit()
-    cur.close()
-    con.close()
-    return 'Created'
-
-@app.route('/drop')
-def drop():
-    con = connect()
-    cur = con.cursor()
-    cur.execute('''
-        DROP TABLE suggestions;
-        ''')
-    con.commit()
-    cur.close()
-    con.close()
-    return 'Dropped'
-
-@app.route('/delete')
-def delete():
-    con = connect()
-    cur = con.cursor()
-    cur.execute('''
-        DELETE FROM suggestions;
-        ''')
-    con.commit()
-    cur.close()
-    con.close()
-    return 'Deleted'
-
 # Database -------------------------------------------------------------------
 
 def connect():
