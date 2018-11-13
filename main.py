@@ -85,15 +85,13 @@ def submit():
         cur = con.cursor()
         cur.execute('''
             INSERT INTO suggestions (
-                ip,
                 msoa11cd,
                 msoa11nm,
                 msoa11hclnm,
                 suggestion,
                 reason)
-            VALUES(%s, %s, %s, %s, %s, %s);''',
-                    (request.remote_addr,
-                     request.form['msoa11cd'],
+            VALUES(%s, %s, %s, %s, %s);''',
+                    (request.form['msoa11cd'],
                      request.form['msoa11nm'],
                      request.form['msoa11hclnm'],
                      request.form['suggestion'],
@@ -103,11 +101,10 @@ def submit():
         con.close()
         return '''{{
             "msoa11cd": "{0}",
-            "msoa11cd": "{1}",
-            "msoa11nm": "{2}",
-            "msoa11hclnm": "{3}",
-            "suggestion": "{4}",
-            "reason": "{5}"}}'''.format(
+            "msoa11nm": "{1}",
+            "msoa11hclnm": "{2}",
+            "suggestion": "{3}",
+            "reason": "{4}"}}'''.format(
                 request.remote_addr,
                 request.form['msoa11cd'],
                 request.form['msoa11nm'],
@@ -131,16 +128,23 @@ def results():
         results = {'suggestions': []}
         con = connect()
         cur = con.cursor()
-        cur.execute('''SELECT * FROM suggestions;''')
+        cur.execute('''
+            SELECT
+                suggestion_id,
+                msoa11cd,
+                msoa11nm,
+                msoa11hclnm,
+                suggestion,
+                reason
+            FROM suggestions;''')
         for row in cur.fetchall():
             suggestion = {
                 'id': row[0],
-                'ip_addr': row[1],
-                'msoa_code': row[2],
-                'msoa_name': row[3],
-                'hcl_name': row[4],
-                'suggestion': row[5],
-                'reason': row[6],
+                'msoa_code': row[1],
+                'msoa_name': row[2],
+                'hcl_name': row[3],
+                'suggestion': row[4],
+                'reason': row[5],
             }
             results['suggestions'].append(suggestion)
         cur.close()
@@ -152,6 +156,49 @@ def results():
             err_msg = e.diag.message_primary
         app.logger.error('Error in database operation: {0}'.format(err_msg))
         abort(500)
+
+@app.route('/create')
+def create():
+    con = connect()
+    cur = con.cursor()
+    cur.execute('''
+        CREATE TABLE suggestions (
+            suggestion_id serial primary key,
+            ip varchar(64),
+            msoa11cd varchar(64),
+            msoa11nm varchar(64),
+            msoa11hclnm varchar(64),
+            suggestion varchar(64),
+            reason varchar(1024));
+        ''')
+    con.commit()
+    cur.close()
+    con.close()
+    return 'Created'
+
+@app.route('/drop')
+def drop():
+    con = connect()
+    cur = con.cursor()
+    cur.execute('''
+        DROP TABLE suggestions;
+        ''')
+    con.commit()
+    cur.close()
+    con.close()
+    return 'Dropped'
+
+@app.route('/delete')
+def delete():
+    con = connect()
+    cur = con.cursor()
+    cur.execute('''
+        DELETE FROM suggestions;
+        ''')
+    con.commit()
+    cur.close()
+    con.close()
+    return 'Deleted'
 
 # Database -------------------------------------------------------------------
 

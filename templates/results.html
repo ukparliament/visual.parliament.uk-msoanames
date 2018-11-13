@@ -15,7 +15,6 @@
             <table>
                 <tr>
                     <th><b>Id</b></th>
-                    <th><b>IP Address</b></th>
                     <th><b>Code</b></th>
                     <th><b>Name</b></th>
                     <th><b>HCL Name</b></th>
@@ -25,7 +24,6 @@
                 {% for suggestion in results.suggestions %}
                 <tr>
                     <td>{{suggestion.id}}</td>
-                    <td>{{suggestion.ip_addr}}</td>
                     <td>{{suggestion.msoa_code}}</td>
                     <td>{{suggestion.msoa_name}}</td>
                     <td>{{suggestion.hcl_name}}</td>
