@@ -10,7 +10,7 @@ const createMap = (long, lat, zoom) => {
         } else {
             return parseFloat(val);
         }
-    }
+    };
 
     const longitude = getFloatParam(long, -0.116773);
     const latitude = getFloatParam(lat, 51.510357);
@@ -23,7 +23,7 @@ const createMap = (long, lat, zoom) => {
 
     const map = new mapboxgl.Map({
         container: "map",
-        style: "mapbox://styles/hawkinsohocl/cjnc3osfx0or32rniiefrzucp",
+        style: "mapbox://styles/hawkinsohocl/cjp3yceei0zjy2sqx8osa0qtb",
         center: [longitude, latitude],
         zoom: zoomLevel
     });
@@ -51,14 +51,14 @@ const createApp = (map, csrf) => ({
 
             map.addSource("msoa", {
                 "type": "vector",
-                "url": "mapbox://hawkinsohocl.5oou6f3x"
+                "url": "mapbox://hawkinsohocl.dufqu7po"
             });
 
             map.addLayer({
                 "id": "msoa-highlight",
                 "type": "fill",
                 "source": "msoa",
-                "source-layer": "msoa-2011-polygons-hcl-8rfvjp",
+                "source-layer": "msoa-2011-polygons-hcl-9e0rmt",
                 "paint": {
                     "fill-color": "#d83808",
                     "fill-opacity": 0
@@ -81,9 +81,8 @@ const createApp = (map, csrf) => ({
         map.on("moveend", () => {
             const c = map.getCenter();
             const z = map.getZoom();
-            const url = `/map?long=${c.lng}&lat=${c.lat}&zoom=${z}`
-        	history.replaceState(null, null, url);
-            console.log();
+            const url = `/map?long=${c.lng}&lat=${c.lat}&zoom=${z}`;
+            history.replaceState(null, null, url);
         });
 
         return this;
