@@ -13,19 +13,26 @@
     <div id="main">
         <div id="column">
             <h1>Help us name your neighbourhood</h1>
-            <p>Here at the Commons Library we’re big fans of <a href="https://commonslibrary.parliament.uk/local-data-browse-by-topic/">local data</a> &mdash; data which tells us about variation between small neighbourhoods in different parts of the country. There are many ways of carving up the UK into small areas for statistical purposes. For instance, people often use <a href="https://en.wikipedia.org/wiki/Wards_and_electoral_divisions_of_the_United_Kingdom">wards</a> to talk about variation below the level of constituencies or local authorities.</p>
-            <p>Other options are available, such as <a href="https://www.ons.gov.uk/methodology/geography/ukgeographies/censusgeography">geographical divisions</a> created through the census. However, these often don’t have recognisable names, making it hard to use them to communicate local data &mdash; few people know what area &ldquo;Leeds 109&rdquo; or &ldquo;E02006481&rdquo; refers to, for example. We’ve set out to solve this problem.</p>
-            <p><b>We’ve come up with a first draft of local names for every Middle-Layer Super Output Area (&lsquo;MSOA&rsquo;) in England and Wales &mdash; and we want your help to correct and improve it.</b></p>
-            <p>On the next page is a map that you can use to view our draft neighbourhood names and make suggestions for alternatives. Simply click on an area to suggest an alternative name.</p>
-            <p>Neighbourhood names are tricky and difficult to capture, so we want to make use of your local knowledge in checking our suggested names. We want to know the names that you use to refer to your neighourhoods. Once we have gathered enough feedback and suggestions, we’ll be using this set of MSOA names to communicate local data in our publications.</p>
-            <p>This project covers only England and Wales, because Scottish and Northern Irish census geographies are defined separately.</p>
+
+            <p>Here at the Commons Library we’re fans of <a href="https://commonslibrary.parliament.uk/local-data-browse-by-topic/">local data</a> &mdash; which shows how small areas vary in different parts of the country. And there are many ways of carving up the UK into small areas for these statistical purposes &mdash; for example, people often use <a href="https://en.wikipedia.org/wiki/Wards_and_electoral_divisions_of_the_United_Kingdom">council wards</a> to talk about variation below the level of constituencies or local authorities.</p>
+
+            <p>There are other geographies that we can’t currently use to communicate local data, because they don’t have recognisable names. For example, some geographies used in the Census only have names like “Leeds 109” or “E02006481”, and almost nobody would understand what these refer to. We’ve set out to solve this problem.</p>
+
+            <p><b>We’ve created a set of neighbourhood names for every Middle-Layer Super Output Area (&lsquo;MSOA&rsquo;) in England and Wales &mdash; and we want to borrow your local knowledge to help to correct and improve it.</b></p>
+
+            <p>On the next page is a map that you can use to view our draft neighbourhood names and make suggestions for alternatives. <b>Simply click on an area to suggest an alternative name</b>. We want to know the names that you use to refer to your neighbourhoods. This is a draft and we know that there will be mistakes.</p>
+
+            <p>Once we have gathered enough feedback and suggestions we’ll be using this set of names to communicate local data in our publications, as an alternative to wards.</p>
+
+            <p>This project covers only England and Wales, because Scottish and Northern Irish Census geographies are defined separately.</p>
+
             <div class="accept">
                 <form id="acceptform" action="/map" method="GET">
                     <input id="long" name="long" type="hidden" value="-0.116773" />
                     <input id="lat" name="lat" type="hidden" value="51.510357" />
                     <input id="zoom" name="zoom" type="hidden" value="12.5" />
                     <button id="acceptbutton" class="acceptbutton" type="submit">
-                        Continue
+                        Continue to map
                     </button>
                 </form>
             </div>
@@ -33,7 +40,7 @@
         <nav></nav>
         <aside></aside>
     </div>
-    <footer>Copyright &copy; 2018 House of Commons Library</footer>
+    <footer>Copyright &copy; 2018-19 House of Commons Library</footer>
     <script>
     msoa.handleLocation();
     </script>

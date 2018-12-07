@@ -121,9 +121,10 @@ img {
 
 button {
     margin: 0;
-    height: 40px;
+    padding: 20px 20px 20px 20px;
+
     font-family: inherit;
-    font-size: 11pt;
+    font-size: 18pt;
     font-weight: bold;
     border-radius: 6px;
     background: #ffffff;
