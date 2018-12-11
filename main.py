@@ -36,7 +36,7 @@ csrf = CSRFProtect(app)
 
 # Routes ---------------------------------------------------------------------
 
-@app.route('/msoanames/')
+@app.route('/')
 @csrf.exempt
 def index():
     """Render the index page."""
