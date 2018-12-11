@@ -332,7 +332,7 @@ const createFormFactory = (app) => {
             }
         };
 
-        request.open("POST", "/submit");
+        request.open("POST", "/msoanames/submit");
         request.setRequestHeader("X-CSRFToken", app.getCSRF());
         request.send(formData);
     };
@@ -366,7 +366,7 @@ const createFormFactory = (app) => {
             "boundary changes.";
 
         const html = `
-            <form method="post" action="/submit">
+            <form method="post" action="/msoanames/submit">
                 <input type="hidden" id="msoa11cd"
                     value="${properties.msoa11cd}">
                 <input type="hidden" id="msoa11nm"

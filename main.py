@@ -11,6 +11,7 @@ from flask import redirect
 from flask import render_template
 from flask import request
 from flask import Response
+from flask import send_from_directory
 from flask import url_for
 from flask import abort
 from flask_wtf.csrf import CSRFProtect
@@ -35,18 +36,18 @@ csrf = CSRFProtect(app)
 
 # Routes ---------------------------------------------------------------------
 
-@app.route('/')
+@app.route('/msoanames/')
 @csrf.exempt
 def index():
     """Render the index page."""
     return render_template('index.html')
 
-@app.route('/map')
+@app.route('/msoanames/map')
 def msoas():
     """Render the MSOA map."""
     return render_template('map.html')
 
-@app.route('/submit', methods=['GET', 'POST'])
+@app.route('/msoanames/submit', methods=['GET', 'POST'])
 def submit():
 
     """Handle submitted suggestions."""
@@ -119,7 +120,7 @@ def submit():
         app.logger.error('Error in database operation: {0}'.format(err_msg))
         abort(500)
 
-@app.route('/results')
+@app.route('/msoanames/results')
 def results():
 
     """Display the results."""
@@ -156,6 +157,11 @@ def results():
             err_msg = e.diag.message_primary
         app.logger.error('Error in database operation: {0}'.format(err_msg))
         abort(500)
+
+@app.route('/msoanames/static/<path:filename>')
+def serve_static(filename):
+    root_dir = os.path.dirname(os.getcwd())
+    return send_from_directory('static', filename)
 
 # Database -------------------------------------------------------------------
 
