@@ -81,7 +81,7 @@ const createApp = (map, csrf) => ({
         map.on("moveend", () => {
             const c = map.getCenter();
             const z = map.getZoom();
-            const url = `/map?long=${c.lng}&lat=${c.lat}&zoom=${z}`;
+            const url = `/msoanames/map?long=${c.lng}&lat=${c.lat}&zoom=${z}`;
             history.replaceState(null, null, url);
         });
 
