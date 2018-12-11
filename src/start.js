@@ -12,7 +12,7 @@ const handleLocation = () => {
             },
             (error) => {
                 if (error.code == error.PERMISSION_DENIED) {
-                    acceptbutton.innerHTML = "Continue";
+                    acceptbutton.innerHTML = "Continue to map";
                 }
             },
             { maximumAge: 300000 }
