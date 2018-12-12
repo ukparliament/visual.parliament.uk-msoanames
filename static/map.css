@@ -41,12 +41,12 @@ body {
 
 #infobox a:link, a:visited {
     color: #d06040;
-    text-decoration: none;
+    text-decoration: underline;
     font-weight: bold;
 }
 
 #infobox a:hover, a:active {
-    color: #d06040;
+    color: #a0a0a0;
     text-decoration: underline;
     font-weight: bold;
 }

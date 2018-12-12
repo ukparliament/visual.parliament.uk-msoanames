@@ -103,6 +103,10 @@ p {
     color: #000000;
 }
 
+p.gotomap{
+    text-align: center;
+}
+
 img {
     padding: 0;
     margin: 0;
@@ -111,6 +115,7 @@ img {
 
 #portcullis {
     height: 100px;
+    width: 87px;
 }
 
 .accept {
@@ -142,12 +147,12 @@ button:active {
 /* Links */
 a:link, a:visited {
     color: #d06040;
-    text-decoration: none;
+    text-decoration: underline;
     font-weight: bold;
 }
 
 a:hover, a:active {
-    color: #d06040;
+    color: #a0a0a0;
     text-decoration: underline;
     font-weight: bold;
 }

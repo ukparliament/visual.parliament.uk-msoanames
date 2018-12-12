@@ -300,7 +300,6 @@ const createFormFactory = (app) => {
         formData.append("reason", reason);
 
         const request = new XMLHttpRequest();
-        request.timeout = 20000;
 
         request.onload = () => {
 
@@ -333,6 +332,7 @@ const createFormFactory = (app) => {
         };
 
         request.open("POST", "/msoanames/submit");
+        request.timeout = 30000;
         request.setRequestHeader("X-CSRFToken", app.getCSRF());
         request.send(formData);
     };
