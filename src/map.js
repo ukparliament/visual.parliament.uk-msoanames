@@ -23,7 +23,7 @@ const createMap = (long, lat, zoom) => {
 
     const map = new mapboxgl.Map({
         container: "map",
-        style: "mapbox://styles/hawkinsohocl/cjp3yceei0zjy2sqx8osa0qtb",
+        style: "mapbox://styles/hawkinsohocl/cjpo9mons0ffa2rp99z3op5bw",
         center: [longitude, latitude],
         zoom: zoomLevel
     });
@@ -51,19 +51,19 @@ const createApp = (map, csrf) => ({
 
             map.addSource("msoa", {
                 "type": "vector",
-                "url": "mapbox://hawkinsohocl.dufqu7po"
+                "url": "mapbox://hawkinsohocl.07ddkl5y"
             });
 
             map.addLayer({
                 "id": "msoa-highlight",
                 "type": "fill",
                 "source": "msoa",
-                "source-layer": "msoa-2011-polygons-hcl-9e0rmt",
+                "source-layer": "msoa-2011-polygons-hcl-7azd96",
                 "paint": {
                     "fill-color": "#d83808",
                     "fill-opacity": 0
                 },
-                "minzoom": 8,
+                "minzoom": 8.5,
                 "maxzoom": 22
             });
         });
@@ -72,7 +72,7 @@ const createApp = (map, csrf) => ({
 
         // Remove any open suggestion when the map zooms out too far
         map.on("zoom", () => {
-            if (map.getZoom() < 8 && this.hasSuggestion()) {
+            if (map.getZoom() < 8.5 && this.hasSuggestion()) {
                 this.closeAndRemoveSuggestion();
             }
         });
