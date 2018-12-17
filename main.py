@@ -120,44 +120,6 @@ def submit():
         app.logger.error('Error in database operation: {0}'.format(err_msg))
         abort(500)
 
-@app.route('/msoanames/results')
-def results():
-
-    """Display the results."""
-
-    try:
-        results = {'suggestions': []}
-        con = connect()
-        cur = con.cursor()
-        cur.execute('''
-            SELECT
-                suggestion_id,
-                msoa11cd,
-                msoa11nm,
-                msoa11hclnm,
-                suggestion,
-                reason
-            FROM suggestions;''')
-        for row in cur.fetchall():
-            suggestion = {
-                'id': row[0],
-                'msoa_code': row[1],
-                'msoa_name': row[2],
-                'hcl_name': row[3],
-                'suggestion': row[4],
-                'reason': row[5],
-            }
-            results['suggestions'].append(suggestion)
-        cur.close()
-        con.close()
-        return render_template('results.html', results=results)
-    except psycopg2.Error as e:
-        err_msg = 'Could not connect to the database'
-        if e.pgcode is not None:
-            err_msg = e.diag.message_primary
-        app.logger.error('Error in database operation: {0}'.format(err_msg))
-        abort(500)
-
 @app.route('/msoanames/static/<path:filename>')
 def serve_static(filename):
     root_dir = os.path.dirname(os.getcwd())
