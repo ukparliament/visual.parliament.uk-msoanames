@@ -366,7 +366,8 @@ const createFormFactory = (app) => {
             "boundary changes.";
 
         const html = `
-            <form method="post" action="/msoanames/submit">
+            <form method="post" action="/msoanames/submit"
+                onkeypress="return event.keyCode != 13;">
                 <input type="hidden" id="msoa11cd"
                     value="${properties.msoa11cd}">
                 <input type="hidden" id="msoa11nm"
