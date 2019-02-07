@@ -122,7 +122,7 @@ def submit():
 
 @app.route('/msoanames/static/<path:filename>')
 def serve_static(filename):
-    root_dir = os.path.dirname(os.getcwd())
+    #root_dir = os.path.dirname(os.getcwd())
     return send_from_directory('static', filename)
 
 # Database -------------------------------------------------------------------
