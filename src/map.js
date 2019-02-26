@@ -23,7 +23,7 @@ const createMap = (long, lat, zoom) => {
 
     const map = new mapboxgl.Map({
         container: "map",
-        style: "mapbox://styles/hawkinsohocl/cjruvf16p00p51fmwwcg16yld",
+        style: "mapbox://styles/hawkinsohocl/cjsm1jc2w10ev1fn5darvyssm",
         center: [longitude, latitude],
         zoom: zoomLevel
     });
@@ -51,14 +51,14 @@ const createApp = (map, csrf) => ({
 
             map.addSource("msoa", {
                 "type": "vector",
-                "url": "mapbox://hawkinsohocl.58fhmiyq"
+                "url": "mapbox://hawkinsohocl.4kpvgzbo"
             });
 
             map.addLayer({
                 "id": "msoa-highlight",
                 "type": "fill",
                 "source": "msoa",
-                "source-layer": "msoa-2011-polygons-hcl-5q1dv2",
+                "source-layer": "msoa-2011-polygons-hcl-703cp1",
                 "paint": {
                     "fill-color": "#d83808",
                     "fill-opacity": 0
