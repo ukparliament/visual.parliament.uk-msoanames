@@ -103,8 +103,13 @@ p {
     color: #000000;
 }
 
-p.gotomap{
+p.gotomap {
     text-align: center;
+}
+
+p.closing {
+    text-align: center;
+    font-weight: bold;
 }
 
 img {
