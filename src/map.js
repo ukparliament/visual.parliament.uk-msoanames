@@ -77,7 +77,7 @@ const createApp = (map, csrf) => ({
             }
         });
 
-        // Update the query string with th current map position
+        // Update the query string with the current map position
         map.on("moveend", () => {
             const c = map.getCenter();
             const z = map.getZoom();
