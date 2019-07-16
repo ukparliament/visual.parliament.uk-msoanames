@@ -41,11 +41,14 @@ const createApp = (map, csrf) => ({
 
         // Set up the map
         map.addControl(new mapboxgl.NavigationControl(), "top-right");
+
         // map.addControl(new mapboxgl.GeolocateControl({
         //     showUserLocation: false,
         //     fitBoundsOptions: {maxZoom: 12.5}
         // }));
-        map.getCanvas().style.cursor = "pointer";
+
+        // Map pointer is now disabled
+        // map.getCanvas().style.cursor = "pointer";
 
         this.map.on("load", () => {
 
@@ -68,7 +71,8 @@ const createApp = (map, csrf) => ({
             });
         });
 
-        map.on("click", createClickHandler(this));
+        // Click-handler in now disabled
+        // map.on("click", createClickHandler(this));
 
         // Remove any open suggestion when the map zooms out too far
         map.on("zoom", () => {
