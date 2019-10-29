@@ -12,23 +12,18 @@
     <header><img id="portcullis" src="/msoanames/static/portcullis.svg" /></header>
     <div id="main">
         <div id="column">
-            <h1>Help us name your neighbourhood</h1>
 
-            <p><b>Thank you for your suggestions for MSOA names. Our six-month suggestions phase has now ended and we are currently working through your feedback. We will publish the full MSOA names dataset on this website in due course. If you have any questions or comments before then, please email: <a href="mailto:papers@parliament.uk">papers@parliament.uk</a>.</b></p>
+            <h1>House of Commons Library MSOA Names</h1>
 
-            <hr><br>
+            <div id="downloadbox">
+            <p>Download the MSOA names dataset in Excel or CSV format.</p>
+            <ul>
+                <li><a href="/msoanames/static/MSOA-Names-v1.0.0.xlsx">MSOA Names (Excel)</a></li>
+                <li><a href="/msoanames/static/MSOA-Names-v1.0.0.csv">MSOA Names (CSV)</a></li>
+            </ul>
 
-            <p>Here at the Commons Library we’re fans of <a href="https://commonslibrary.parliament.uk/local-data-browse-by-topic/">local data</a> &mdash; which shows how small areas vary in different parts of the country. And there are many ways of carving up the UK into small areas for these statistical purposes &mdash; for example, people often use <a href="https://en.wikipedia.org/wiki/Wards_and_electoral_divisions_of_the_United_Kingdom">council wards</a> to talk about variation below the level of constituencies or local authorities.</p>
-
-            <p>There are other geographies that we can’t currently use to communicate local data, because they don’t have recognisable names. For example, some geographies used in the Census only have names like “Leeds 109” or “E02006481”, and almost nobody would understand what these refer to. We’ve set out to solve this problem.</p>
-
-            <p>We’ve created a set of neighbourhood names for every Middle-Layer Super Output Area (&lsquo;MSOA&rsquo;) in England and Wales &mdash; and we want to borrow your local knowledge to help to correct and improve it.</p>
-
-            <p>On the next page is a map that you can use to view our draft neighbourhood names and make suggestions for alternatives. Simply click on an area to suggest an alternative name. We want to know the names that you use to refer to your neighbourhoods. This is a draft and we know that there will be mistakes.</p>
-
-            <p>Once we have gathered enough feedback and suggestions we’ll be using this set of names to communicate local data in our publications, as an alternative to wards.</p>
-
-            <p>This project covers only England and Wales, because Scottish and Northern Irish Census geographies are defined separately.</p>
+            <p>The current version is <b>1.0.0</b> published on 1 November 2019.</p>
+            </div>
 
             <div class="accept">
                 <form id="acceptform" action="/msoanames/map" method="GET">
@@ -36,10 +31,59 @@
                     <input id="lat" name="lat" type="hidden" value="51.510357" />
                     <input id="zoom" name="zoom" type="hidden" value="12.5" />
                     <button id="acceptbutton" class="acceptbutton" type="submit">
-                        Continue to map
+                        See a map of MSOAs
                     </button>
                 </form>
             </div>
+
+            <h2>What are MSOAs?</h2>
+
+            <p>Middle-Layer Super Output Areas (MSOAs) are a <a href="https://www.ons.gov.uk/methodology/geography/ukgeographies/censusgeography">statistical geography</a> created for the <a href="https://www.ons.gov.uk/census/2011census">2011 Census of England and Wales</a>. There are 7,201 MSOAs in England and Wales, with a typical population of 7,000-10,000 people. Each MSOA sits within a local authority, and each local authority is divided into between one and 132 MSOAs depending on how many people live there.</p>
+
+            <h2>Why do they need names?</h2>
+
+            <p>Because of their relatively consistent size across the country, they are a useful unit for analysing data about small local areas. Several official datasets are published at MSOA level, including <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/housing/datasets/hpssadataset2medianhousepricebymsoaquarterlyrollingyear">house prices</a> and <a href="https://www.gov.uk/government/statistics/sub-national-electricity-and-gas-consumption-at-lsoa-msoa-and-igz-level-in-2016">energy consumption</a>. However, it has previously been difficult for us to present this data in an understandable way, because MSOAs were not given recognisable names when designed &ndash; instead they have standard ONS codes (e.g. &lsquo;E02006827&rsquo;) and schematic names relating to the local authorities where they are located (e.g. &lsquo;Ashfield 004&rsquo;). </p>
+
+            <p>To solve this problem we set out to design a set of recognisable names for MSOAs based on the towns, villages and neighbourhoods that they cover. Our goal was to devise a set of names that we could use in our <a href="https://commonslibrary.parliament.uk/local-data-browse-by-topic/">local data publications</a>, and to publish the names so that others who work with local data could use them. The names aren't intended to supplant any names that might already be used locally and they aren't &lsquo;official&rsquo; names for MSOAs. Rather, they are intended to provide those using MSOA data with a resource to make that data easier to interpret and present.</p>
+
+            <p>In January 2019 we published draft names on an interactive map website to invite feedback and suggestions on our first draft set of names. This remained open until July 2019 and provided invaluable local knowledge to help us improve the set of names. Many thanks to those of you who contributed. In October 2019 we published the revised set of names on this site. We'd also like to thank the the <a href="http://www.comisiynyddygymraeg.cymru/english/Pages/Home.aspx">Welsh Language Commissioner</a> for their assistance with developing Welsh-language names for MSOAs in Wales.</p>
+
+            <h2>What about council wards and their names?</h2>
+
+            <p>Wards <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/wardlevelmidyearpopulationestimatesexperimental">vary substantially in population</a> in different parts of the country. In some areas, wards have similar or identical boundaries to MSOAs and in these cases their names are often adopted as MSOA names too. However, sometimes ward and MSOA boundaries differ substantially, so different names are needed. Also, ward names are not always related to the names of the settlements they cover and aren't always designed to be recognisable outside the area. In such cases our MSOA names may differ from ward names.</p>
+
+            <p>Sometimes the MSOA names and ward names covering an area are similar, even though the boundaries don't exactly match. In order to avoid confusion over ward names and MSOA names in these cases, we recommend presenting data using ONS codes as well as names. For instance, while our <a href="https://commonslibrary.parliament.uk/social-policy/housing/home-ownership/constituency-data-house-prices/">data dashboards</a> featuring MSOA data contain only names on the webpage, the ONS codes can be found in the accompanying downloadable spreadsheets.</p>
+
+            <p>To avoid confusion, we’ve tried to avoid giving any MSOA a name which is identical to the name of the local authority or constituency that the MSOA forms part of. For instance, the MSOA covering most of Wantage is called &lsquo;Wantage Town&rsquo;, to avoid confusion with the constituency of Wantage.</p>
+
+            <h2>What about Scotland and Northern Ireland?</h2>
+
+            <p>Scotland and Northern Ireland have different census geographies and so are not included in this project. The Scottish equivalent of MSOAs, <a href="http://geoportal.statistics.gov.uk/datasets/intermediate-zones-december-2011-names-and-codes-in-scotland">&lsquo;Intermediate Zones&rsquo;</a>, are given recognisable names in most local authorities. We use these on some of our <a href="https://commonslibrary.parliament.uk/science/technology/constituency-data-broadband-coverage-and-speeds/">data dashboards</a>.</p>
+
+            <h2>I've found a mistake - are you still taking suggestions?</h2>
+
+            <p>If you've spotted an error or would like to suggest a different name for an area, drop us an email at <a href="mailto:papers@parliament.uk?subject=MSOA Names">papers@parliament.uk</a> (including &lsquo;MSOA Names&rsquo; in the subject line). Do have a quick read of the FAQs about names below first.</p>
+
+            <p><b>&ldquo;This area doesn't match the boundaries associated with the name used to describe it.&rdquo; / &ldquo;The boundaries in this area don't match up with neighbourhood borders.&rdquo;</b></p>
+
+            <p>Because MSOAs are a statistical geography designed to divide the country into nearly-equal units, they do not always reflect ordinary borders of settlements. So they don't always align with the natural boundaries of a town or a neighbourhood. The names chosen, with your help, are aimed at finding the best-fitting name for an area. In some cases, no ideal name exists and the name chosen is a &ldquo;least worst option&rdquo;. For instance, sometimes an MSOA is named after a neighbourhood, even though a small portion of that neighbourhood lies outside of the MSOA's boundaries.</p>
+
+            <p><b>&ldquo;[Neighbourhood] East/West/North/South isn't a distinction we use locally &ndash; we just refer to [Neighbourhood].&rdquo;</b></p>
+
+            <p>Sometimes there is more than one MSOA covering a single neighbourhood or town. In those cases it's necessary to give the MSOAs distinct names so they can be distinguished in data. Sometimes this is done with compass points (e.g. &lsquo;Sleaford East&rsquo;) and sometimes by highlighting roads, parks or other features that fall within one MSOA in the town but not another (e.g. &lsquo;Scunthorpe Central Park&rsquo;).</p>
+
+            <p><b>&ldquo;Only some of the villages in this area are mentioned in the MSOA's name.&rdquo;</b></p>
+
+            <p>In order to keep the names of a useable length, no more than three settlement names are included in any MSOA name. This means that in sparsely-populated areas covering many small villages, names often have to be selective. Usually a name will reference the largest settlements in the area. Alternatively, villages referenced in the MSOA's name are sometimes picked to give an idea of the extent of a large MSOA’s area e.g. &lsquo;A, B and C&rsquo; to indicate that the MSOA covers an area from A in the west, to B in the east, and to C in the south.</p>
+
+            <p><b>&ldquo;I made a suggestion, but it wasn’t adopted.&rdquo;</b></p>
+
+            <p>We often had more than one suggestion for an area’s name, meaning that not all suggestions could be adopted. In addition, we didn’t accept some suggestions which conflicted with the naming principles outlined above.</p>
+
+            <p><b>&ldquo;How can I map MSOAs?&rdquo;</b></p>
+
+            <p>Boundaries for MSOAs are published on the <a href="https://geoportal.statistics.gov.uk/search?collection=Dataset&sort=name&tags=BDY_MSOA%2CDEC_2011">ONS Geography Portal</a>.</p>
+
         </div>
         <nav></nav>
         <aside></aside>

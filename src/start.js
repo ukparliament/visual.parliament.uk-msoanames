@@ -8,11 +8,11 @@ const handleLocation = () => {
             (position) => {
                 acceptform.long.value = position.coords.longitude.toFixed(6);
                 acceptform.lat.value = position.coords.latitude.toFixed(6);
-                acceptbutton.innerHTML = "Go to my location";
+                acceptbutton.innerHTML = "See MSOAs near me";
             },
             (error) => {
                 if (error.code == error.PERMISSION_DENIED) {
-                    acceptbutton.innerHTML = "Continue to map";
+                    acceptbutton.innerHTML = "See a map of MSOAs";
                 }
             },
             { maximumAge: 300000 }

@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 
 /* Page structure ----------------------------------------------------------*/
+
 body {
     margin: 0;
     padding: 0;
@@ -95,6 +96,16 @@ h1 {
     color: #d06040;
 }
 
+h2 {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 27px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #d06040;
+}
+
 p {
     margin: 0;
     padding: 0;
@@ -124,15 +135,13 @@ img {
 }
 
 .accept {
-    margin: 20px 0px 20px 0px;
     padding: 0;
     text-align: center;
 }
 
 button {
-    margin: 0;
+    margin: 30px 20px 60px 20px;
     padding: 20px 20px 20px 20px;
-
     font-family: inherit;
     font-size: 18pt;
     font-weight: bold;
@@ -147,6 +156,23 @@ button:active {
     background: #ffffff;
     color: #d06040;
     border-color: #d06040;
+}
+
+#downloadbox {
+    margin: 20px;
+    padding: 20px;
+    background: #f0f0f0;
+    border: 1px solid #c0c0c0;
+}
+
+#downloadbox p {
+    margin: 0;
+    padding: 0;
+}
+
+#downloadbox ul {
+    margin: 0;
+    padding: 20px 40px 20px 40px;
 }
 
 /* Links */

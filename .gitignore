@@ -8,4 +8,4 @@ node_modules/
 .eslintrc.json
 .pylintrc
 db.env
-start_dev.sh
+start-dev.sh
