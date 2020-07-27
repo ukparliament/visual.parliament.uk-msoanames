@@ -42,13 +42,32 @@ a:hover, a:active {
     border-radius: 6px;
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
     color: #606060;
+    max-width: 400px;
 }
 
 #infobox p {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
+#infobox p.noscript-opening {
+    margin: 0;
+    padding: 12px 0 12px 0;
+}
+
+#infobox p.noscript {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 12px;
+}
+
+#infobox h1 {
+    margin: 0px;
+    padding: 0px;
+    color: #d06040;
+    font-size: 14pt;
+    font-weight: bold;
+}
 
 /* Selection styles -------------------------------------------------------- */
 
