@@ -154,7 +154,7 @@ a:hover, a:active {
 }
 
 #buttonbox button:active {
-    color: #3f9d8a;
+    color: #006548;
     background: #ffffff;
-    border-color: #3f9d8a;
+    border-color: #006548;
 }
