@@ -17,13 +17,13 @@ body {
 }
 
 a:link, a:visited {
-    color: #d06040;
+    color: #006548;
     text-decoration: underline;
     font-weight: bold;
 }
 
 a:hover, a:active {
-    color: #a0a0a0;
+    color: #3f9d8a;
     text-decoration: underline;
     font-weight: bold;
 }
@@ -42,7 +42,7 @@ a:hover, a:active {
     background: #ffffff;
     border-radius: 6px;
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
-    color: #606060;
+    color: #404040;
     max-width: 400px;
 }
 
@@ -65,7 +65,7 @@ a:hover, a:active {
 #infobox h1 {
     margin: 0px;
     padding: 0px;
-    color: #d06040;
+    color: #006548;
     font-size: 14pt;
     font-weight: bold;
 }
@@ -77,6 +77,7 @@ a:hover, a:active {
     padding: 0;
     background: #ffffff;
     border-radius: 6px;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
     width: 270px;
 }
 
@@ -92,8 +93,8 @@ a:hover, a:active {
 #selection:focus {
     outline: none !important;
     box-shadow: none;
-    border-color: #d83808;
-    background: #fff3ef;
+    border-color: #006548;
+    background: #e6fff8;
 }
 
 .messagebox {
@@ -115,7 +116,7 @@ a:hover, a:active {
     font-size: 14pt;
     font-weight: bold;
     line-height: 1.3em;
-    color: #d06040;
+    color: #006548;
 }
 
 #contentbox {
@@ -128,7 +129,7 @@ a:hover, a:active {
     padding: 0;
     font-family: 'Open Sans', sans-serif;
     font-size: 11pt;
-    color: #606060;
+    color: #404040;
 }
 
 #buttonbox {
@@ -148,12 +149,12 @@ a:hover, a:active {
     font-weight: bold;
     border-radius: 6px;
     background: #ffffff;
-    color: #909090;
-    border: 1px solid #c0c0c0;
+    color: #606060;
+    border: 1px solid #a0a0a0;
 }
 
 #buttonbox button:active {
-    color: #d06040;
+    color: #3f9d8a;
     background: #ffffff;
-    border-color: #d06040;
+    border-color: #3f9d8a;
 }
