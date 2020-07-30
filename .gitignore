@@ -1,6 +1,6 @@
 # Directories
 __pycache__/
-_production/
+docs/
 node_modules/
 
 # Files

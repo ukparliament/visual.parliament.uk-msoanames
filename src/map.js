@@ -23,7 +23,7 @@ const createMap = (long, lat, zoom) => {
 
     const map = new mapboxgl.Map({
         container: "map",
-        style: "mapbox://styles/hawkinsohocl/ckd5oq3la0tbo1il928z4c9cu", 
+        style: "mapbox://styles/hawkinsohocl/ckd8k67i5098u1is2g8e3avln", 
         center: [longitude, latitude],
         zoom: zoomLevel
     });
@@ -53,14 +53,14 @@ const createApp = (map, csrf) => ({
 
             map.addSource("msoa", {
                 "type": "vector",
-                "url": "mapbox://hawkinsohocl.ccefulrq" 
+                "url": "mapbox://hawkinsohocl.cpxwgnay" 
             });
 
             map.addLayer({
                 "id": "msoa-highlight",
                 "type": "fill",
                 "source": "msoa",
-                "source-layer": "msoa-2011-polygons-hcl-2zz3x5",
+                "source-layer": "msoa-2011-polygons-hcl-aseqrc",
                 "paint": {
                     "fill-color": "#682f7f",
                     "fill-opacity": 0
@@ -215,8 +215,8 @@ const createMessageFactory = (app) => {
                 <p>${properties.msoa11nm}</p>
                 <p>${properties.msoa11cd}</p>
                 <p>
-                    <a href="/msoanames/static/MSOA-Names-v1.2.0.xlsx">Excel</a> /
-                    <a href="/msoanames/static/MSOA-Names-v1.2.0.csv">CSV</a>
+                    <a href="/msoanames/static/MSOA-Names-1.3.0.xlsx">Excel</a> /
+                    <a href="/msoanames/static/MSOA-Names-1.3.0.csv">CSV</a>
                 </p>
             </div>
             <div id="buttonbox">

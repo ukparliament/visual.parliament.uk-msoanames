@@ -187,6 +187,18 @@ a:hover, a:active {
     font-weight: bold;
 }
 
+footer a:link, a:visited {
+    color: #006548;
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+footer a:hover, a:active {
+    color: #3f9d8a;
+    text-decoration: underline;
+    font-weight: normal;
+}
+
 /* Media queries -----------------------------------------------------------*/
 @media all and (max-width: 640px) {
     #main {
