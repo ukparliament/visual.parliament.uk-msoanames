@@ -1,8 +1,8 @@
-/* Imports -----------------------------------------------------------------*/
+/* Imports ----------------------------------------------------------------- */
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 
-/* Page structure ----------------------------------------------------------*/
+/* Page structure ---------------------------------------------------------- */
 
 body {
     margin: 0;
@@ -199,7 +199,8 @@ footer a:hover, footer a:active {
     font-weight: normal;
 }
 
-/* Media queries -----------------------------------------------------------*/
+/* Media queries ------------------------------------------------------------ */
+
 @media all and (max-width: 640px) {
     #main {
         flex-direction: column;
