@@ -1061,7 +1061,7 @@ E02002259,Calderdale 016,Calderdale 016,Savile Park,,Calderdale
 E02002260,Calderdale 017,Calderdale 017,Sowerby Bridge,,Calderdale
 E02002261,Calderdale 018,Calderdale 018,Southowram & Siddal,,Calderdale
 E02002262,Calderdale 019,Calderdale 019,Brighouse,,Calderdale
-E02002263,Calderdale 020,Calderdale 020,"Sowerby, Beechfoot & Luddendenfoot",,Calderdale
+E02002263,Calderdale 020,Calderdale 020,Sowerby & Luddendenfoot,,Calderdale
 E02002264,Calderdale 021,Calderdale 021,Skircoat Green,,Calderdale
 E02002265,Calderdale 022,Calderdale 022,Todmorden East & Walsden,,Calderdale
 E02002266,Calderdale 023,Calderdale 023,Rastrick East,,Calderdale
@@ -2445,7 +2445,7 @@ E02004632,Forest of Dean 007,Forest of Dean 007,Coleford,,Forest of Dean
 E02004633,Forest of Dean 008,Forest of Dean 008,"Bream, Pillowell & Yorkley",,Forest of Dean
 E02004634,Forest of Dean 009,Forest of Dean 009,Lydney,,Forest of Dean
 E02004635,Forest of Dean 010,Forest of Dean 010,Tidenham & Woolaston,,Forest of Dean
-E02005203,Fylde 001,Fylde 001,"Elswick, Singleton & Warton",,Fylde
+E02005203,Fylde 001,Fylde 001,"Elswick, Singleton & Weeton",,Fylde
 E02005204,Fylde 002,Fylde 002,Kirkham & Wesham,,Fylde
 E02005205,Fylde 003,Fylde 003,Clifton & Newton-with-Scales,,Fylde
 E02005206,Fylde 004,Fylde 004,St Annes North & Airport,,Fylde
@@ -4819,7 +4819,7 @@ W02000282,Rhondda Cynon Taf 031,Rhondda Cynon Taf 031,Pont-y-clun & Llanharry,Po
 E02005270,Ribble Valley 001,Ribble Valley 001,"Waddington, Gisburn & Slaidburn",,Ribble Valley
 E02005271,Ribble Valley 002,Ribble Valley 002,Clitheroe North,,Ribble Valley
 E02005272,Ribble Valley 003,Ribble Valley 003,Clitheroe South,,Ribble Valley
-E02005273,Ribble Valley 004,Ribble Valley 004,"Longridge North, Ribchester",,Ribble Valley
+E02005273,Ribble Valley 004,Ribble Valley 004,"Longridge North, Ribchester & Chipping",,Ribble Valley
 E02005274,Ribble Valley 005,Ribble Valley 005,"Read, Sabden & Chatburn",,Ribble Valley
 E02005275,Ribble Valley 006,Ribble Valley 006,Longridge South,,Ribble Valley
 E02005276,Ribble Valley 007,Ribble Valley 007,Whalley & Brockhall,,Ribble Valley
@@ -5662,9 +5662,9 @@ E02006405,Spelthorne 003,Spelthorne 003,Ashford West,,Spelthorne
 E02006406,Spelthorne 004,Spelthorne 004,Staines Town,,Spelthorne
 E02006407,Spelthorne 005,Spelthorne 005,Ashford East,,Spelthorne
 E02006408,Spelthorne 006,Spelthorne 006,Ashford Common,,Spelthorne
-E02006409,Spelthorne 007,Spelthorne 007,Staines South West,,Spelthorne
+E02006409,Spelthorne 007,Spelthorne 007,Staines South East,,Spelthorne
 E02006410,Spelthorne 008,Spelthorne 008,Sunbury Common,,Spelthorne
-E02006411,Spelthorne 009,Spelthorne 009,Staines South East,,Spelthorne
+E02006411,Spelthorne 009,Spelthorne 009,Staines South West,,Spelthorne
 E02006412,Spelthorne 010,Spelthorne 010,Sunbury East,,Spelthorne
 E02006413,Spelthorne 011,Spelthorne 011,Halliford & Sunbury West,,Spelthorne
 E02006414,Spelthorne 012,Spelthorne 012,Littleton & Shepperton Green,,Spelthorne

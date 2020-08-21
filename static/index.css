@@ -187,13 +187,13 @@ a:hover, a:active {
     font-weight: bold;
 }
 
-footer a:link, a:visited {
+footer a:link, footer a:visited {
     color: #006548;
     text-decoration: underline;
     font-weight: normal;
 }
 
-footer a:hover, a:active {
+footer a:hover, footer a:active {
     color: #3f9d8a;
     text-decoration: underline;
     font-weight: normal;
