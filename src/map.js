@@ -17,13 +17,17 @@ const createMap = (long, lat, zoom) => {
     const zoomLevel = getFloatParam(zoom, 12.5);
 
     // Create the map
+    // mapboxgl.accessToken =
+    //     "pk.eyJ1IjoiaGF3a2luc29ob2NsIiwiYSI6IjNmMmZkMzY4MTUw" +
+    //     "ZGNiMjE4NTExOWQwNDBjNzg4NjAzIn0.bv8BBlUo7MtQR544YviGZQ";
+
     mapboxgl.accessToken =
-        "pk.eyJ1IjoiaGF3a2luc29ob2NsIiwiYSI6IjNmMmZkMzY4MTUw" +
-        "ZGNiMjE4NTExOWQwNDBjNzg4NjAzIn0.bv8BBlUo7MtQR544YviGZQ";
+        "pk.eyJ1IjoiaGF3a2luc29ob2NsIiwiYSI6ImNraDBtYW9ja" +
+        "TB6YXkycm52Y2t6MTB2anEifQ.G4BRLK2Zb9BwnHsVRdAeGQ";
 
     const map = new mapboxgl.Map({
         container: "map",
-        style: "mapbox://styles/hawkinsohocl/ckggggz8oe9uv1as4asnn8uei", 
+        style: "mapbox://styles/hawkinsohocl/ckh0lqfxr5be419pdep8v99ar", 
         center: [longitude, latitude],
         zoom: zoomLevel
     });
@@ -53,14 +57,14 @@ const createApp = (map, csrf) => ({
 
             map.addSource("msoa", {
                 "type": "vector",
-                "url": "mapbox://hawkinsohocl.0rtzpkw0" 
+                "url": "mapbox://hawkinsohocl.6nredeqq" 
             });
 
             map.addLayer({
                 "id": "msoa-highlight",
                 "type": "fill",
                 "source": "msoa",
-                "source-layer": "msoa-2011-polygons-hcl-9wgfuc",
+                "source-layer": "msoa-2011-polygons-hcl-54m0f4",
                 "paint": {
                     "fill-color": "#682f7f",
                     "fill-opacity": 0
@@ -215,8 +219,8 @@ const createMessageFactory = (app) => {
                 <p>${properties.msoa11nm}</p>
                 <p>${properties.msoa11cd}</p>
                 <p>
-                    <a href="/msoanames/static/MSOA-Names-1.6.0.xlsx">Excel</a> /
-                    <a href="/msoanames/static/MSOA-Names-1.6.0.csv">CSV</a>
+                    <a href="/msoanames/static/MSOA-Names-1.7.xlsx">Excel</a> /
+                    <a href="/msoanames/static/MSOA-Names-1.7.csv">CSV</a>
                 </p>
             </div>
             <div id="buttonbox">
