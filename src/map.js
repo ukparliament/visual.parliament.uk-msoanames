@@ -13,7 +13,7 @@ const createMap = (long, lat, zoom) => {
     };
 
     const longitude = getFloatParam(long, -0.116773);
-    const latitude = getFloatParam(lat, 51.510356);
+    const latitude = getFloatParam(lat, 51.510357);
     const zoomLevel = getFloatParam(zoom, 12.5);
 
     mapboxgl.accessToken =
