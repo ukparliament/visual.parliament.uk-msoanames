@@ -749,7 +749,7 @@
 747,E02003769,Buckden & Perry,-0.251384,52.291289
 748,E02003606,Houghton Conquest & Clophill,-0.448044,52.035996
 749,E02003607,"Marston Moretaine, Lidlington & Woburn",-0.553135,52.058805
-750,E02003605,Cranfield & Apsley Guise,-0.60942,52.067307
+750,E02003605,Cranfield & Aspley Guise,-0.60942,52.067307
 751,E02003602,"Blunham, Caldecote & Broom",-0.307512,52.103324
 752,E02005606,"Thurlton, Haddiscoe & Geldeston",1.550182,52.501936
 753,E02003603,Biggleswade West,-0.261652,52.088375
@@ -3690,7 +3690,7 @@
 3688,E02000633,Brixton Central,-0.115572,51.459273
 3689,E02000630,Clapham Old Town,-0.145202,51.465468
 3690,E02000631,Herne Hill East,-0.098599,51.4637
-3691,E02000638,Brixton Hilll West,-0.124655,51.449463
+3691,E02000638,Brixton Hill West,-0.124655,51.449463
 3692,E02000639,Clapham Park East & Streatham Hill North,-0.130064,51.447325
 3693,E02000166,Highgate West,-0.147079,51.562956
 3694,E02000167,Hampstead Town,-0.173327,51.557258
@@ -4559,7 +4559,7 @@
 4557,E02005110,Lympne & Palmarsh,1.026732,51.075813
 4558,E02005938,Kidlington South,-1.282895,51.815347
 4559,E02005111,Hythe,1.077268,51.069197
-4560,E02005939,"Begbrooke, Yarnton & Water Eaton",-1.303993,51.814674
+4560,E02005939,"Begbroke, Yarnton & Water Eaton",-1.303993,51.814674
 4561,E02005118,Minster South,0.790535,51.418257
 4562,E02005119,Queenborough,0.753553,51.415208
 4563,E02005026,Thanington & Chartham,1.028904,51.248135
@@ -5751,7 +5751,7 @@
 5749,E02004624,Kemble & South Cerney,-1.938703,51.67257
 5750,E02004625,Tetbury,-2.16226,51.642642
 5751,E02004622,Cirencester South,-1.969669,51.705555
-5752,E02004623,Fairford & Lechdale,-1.767196,51.7075
+5752,E02004623,Fairford & Lechlade,-1.767196,51.7075
 5753,E02004620,Cirencester East & Stratton,-1.957225,51.719177
 5754,E02004621,Cirencester Central,-1.966187,51.713802
 5755,E02004628,"Mitcheldean, Drybrook & Ruardean",-2.515998,51.856763
@@ -5805,7 +5805,7 @@
 5803,W02000130,Gogledd Hwlffordd / Haverfordwest North,-4.973416,51.804377
 5804,W02000131,De Hwlffordd / Haverfordwest South,-4.977703,51.794929
 5805,W02000138,Doc Penfro / Pembroke Dock,-4.942277,51.690825
-5806,W02000139,Dwyrain Penfro a Maenorbŷr / Pembroke East & Manorbier,-4.863394,51.675279
+5806,W02000139,Dwyrain Penfro a Maenorb?r / Pembroke East & Manorbier,-4.863394,51.675279
 5807,W02000047,De-orllewin y Rhyl / Rhyl South West,-3.484243,53.315519
 5808,W02000044,De Prestatyn / Prestatyn South,-3.414467,53.327049
 5809,W02000045,Gogledd y Rhyl / Rhyl North,-3.486662,53.321406
@@ -5815,37 +5815,37 @@
 5813,W02000041,Llanrwst a Betws-y-coed / Llanrwst & Betws-y-coed,-3.796801,53.139527
 5814,W02000049,Dyserth a Thremeirchion / Dyserth & Tremeirchion,-3.413146,53.302736
 5815,W02000236,Dwyrain Porthcawl / Porthcawl East,-3.686249,51.48449
-5816,W02000237,Ogwr a Llandŵ / Ogmore-by-Sea & Llandow,-3.566251,51.464835
+5816,W02000237,Ogwr a Lland? / Ogmore-by-Sea & Llandow,-3.566251,51.464835
 5817,W02000234,Broadlands,-3.599355,51.503053
 5818,W02000235,Gorllewin Porthcawl / Porthcawl West,-3.709179,51.48645
 5819,W02000232,Dwyrain Bracla a Llangrallo Isaf / Brackla East & Coychurch Lower,-3.546296,51.509385
 5820,W02000233,Gorllewin Bracla / Brackla West,-3.560392,51.508087
 5821,W02000231,Canol Pen-y-bont ar Ogwr / Central Bridgend,-3.578812,51.510735
 5822,W02000238,Y Bont-faen / Cowbridge,-3.44737,51.461058
-5823,W02000239,Llanbedr-y-fro a Gwenfô / Peterston-super-Ely & Wenvoe,-3.316173,51.457335
+5823,W02000239,Llanbedr-y-fro a GwenfÙ / Peterston-super-Ely & Wenvoe,-3.316173,51.457335
 5824,W02000106,"Llanidloes, Blaen Hafren a Llandinam / Llanidloes, Blaen Hafren & Llandinam",-3.538035,52.44929
-5825,W02000187,Dynfant a Chilâ Uchaf / Dunvant & Upper Killay,-4.031515,51.62306
+5825,W02000187,Dynfant a Chil‚ Uchaf / Dunvant & Upper Killay,-4.031515,51.62306
 5826,W02000107,Trefyclo a Llanandras / Knighton & Presteigne,-3.061927,52.314512
 5827,W02000186,Townhill,-3.963923,51.628399
 5828,W02000104,Gogledd-ddwyrain y Drenewydd / Newtown North,-3.312184,52.517167
 5829,W02000185,Llanmorlais a'r Crwys / Llanmorlais & Three Crosses,-4.101847,51.637953
 5830,W02000105,De-orllewin y Drenewydd / Newtown South,-3.33149,52.507326
 5831,W02000184,Y Cocyd / Cockett,-3.980013,51.636679
-5832,W02000102,Llanfair Caereinion a Chaersŵs / Llanfair Caereinion & Caersws,-3.380335,52.58581
-5833,W02000183,Glandŵr / Landore,-3.94163,51.636312
+5832,W02000102,Llanfair Caereinion a Chaers?s / Llanfair Caereinion & Caersws,-3.380335,52.58581
+5833,W02000183,Gland?r / Landore,-3.94163,51.636312
 5834,W02000103,"Aber-miwl, Ystog a Ceri / Abermule, Churchstoke & Kerry",-3.211887,52.528852
 5835,W02000182,Cwmbwrla,-3.951748,51.639703
 5836,W02000100,Machynlleth a Banwy / Machynlleth & Banwy,-3.799281,52.598912
-5837,W02000181,Bôn-y-maen / Bon-y-maen,-3.908645,51.644435
+5837,W02000181,BÙn-y-maen / Bon-y-maen,-3.908645,51.644435
 5838,W02000101,"Trefaldwyn, Tre-wern ac Aberriw / Montgomery, Trewern & Berriew",-3.143301,52.60784
 5839,W02000180,Ravenhill,-3.975204,51.645996
 5840,W02000108,"Rhaeadr Gwy, Y Bontnewydd-ar-Wy a Chwm Elan / Rhayader, Newbridge-on-Wye & Elan Valley",-3.439299,52.273737
-5841,W02000189,Tŷ-coch / Ty-coch,-3.995602,51.621214
+5841,W02000189,T?-coch / Ty-coch,-3.995602,51.621214
 5842,W02000109,Llandrindod / Llandrindod Wells,-3.377858,52.241998
 5843,W02000188,St Thomas,-3.922679,51.623142
 5844,W02000056,"Corwen, Llanelidan ac Efenechdyd / Corwen, Llanelidan & Efenechdyd",-3.34808,53.040273
 5845,W02000057,Llangollen a Llandrillo / Llangollen & Llandrillo,-3.173792,52.96951
-5846,W02000054,Llandyrnog a Llanarmon-yn-Iâl / Llandyrnog & Llanarmon-yn-Iâl,-3.279308,53.135558
+5846,W02000054,Llandyrnog a Llanarmon-yn-I‚l / Llandyrnog & Llanarmon-yn-I‚l,-3.279308,53.135558
 5847,W02000055,Rhuthun / Ruthin,-3.30923,53.113505
 5848,W02000052,Gorllewin Dinbych / Denbigh West,-3.425046,53.184438
 5849,W02000053,Dwyrain Dinbych a Phentre Llanrhaeadr / Denbigh East & Pentre Llanrhaeadr,-3.403767,53.185365
@@ -5889,7 +5889,7 @@
 5887,W02000285,"Cefncoedycymer, Heolgerrig a Pharc / Cefncoedycymer, Heolgerrig & Park",-3.400256,51.753731
 5888,W02000205,Abaty Castell-nedd / Neath Abbey,-3.820537,51.668442
 5889,W02000116,Y Borth a Bont-goch / Borth & Bont-goch,-4.015858,52.45881
-5890,W02000197,Gorllewin Gŵyr / West Gower,-4.126391,51.579359
+5890,W02000197,Gorllewin G?yr / West Gower,-4.126391,51.579359
 5891,W02000117,Gogledd Aberystwyth / Aberystwyth North,-4.080157,52.4161
 5892,W02000196,West Cross,-4.010413,51.585069
 5893,W02000114,"Crucywel, Llangynidr a Syfaddan / Crickhowell, Llangynidr & Llangorse",-3.150037,51.863654
@@ -5901,7 +5901,7 @@
 5899,W02000110,Llanfair-ym-Muallt a Llanwrtyd / Builth Wells & Llanwrtyd Wells,-3.412411,52.14919
 5900,W02000191,Uplands,-3.968905,51.619437
 5901,W02000111,Y Gelli Gandryll a Thalgarth / Hay-on-Wye & Talgarth,-3.200898,52.043095
-5902,W02000190,Cilâ / Killay,-4.016437,51.621259
+5902,W02000190,Cil‚ / Killay,-4.016437,51.621259
 5903,W02000118,De Aberystwyth / Aberystwyth South,-4.069431,52.406113
 5904,W02000198,Mwmbwls a Newton / Mumbles & Newton,-4.005479,51.572926
 5905,W02000026,Tywyn a Llangelynnin / Tywyn & Llangelynnin,-4.083325,52.588945
@@ -5995,7 +5995,7 @@
 5993,W02000356,Ringland,-2.930419,51.59217
 5994,W02000357,Maendy,-2.974966,51.589868
 5995,W02000354,Lawrence Hill,-2.947373,51.593403
-5996,W02000355,Tŷ-du / Rogerstone,-3.0549,51.593438
+5996,W02000355,T?-du / Rogerstone,-3.0549,51.593438
 5997,W02000352,Shaftesbury a Chrindai / Shaftesbury & Crindai,-3.000516,51.598537
 5998,W02000353,Sain Silian a Barnardtown / St Julians & Barnardtown,-2.982023,51.597467
 5999,W02000350,Langstone a Llan-wern / Langstone & Llan-wern,-2.890831,51.600252
@@ -6021,7 +6021,7 @@
 6019,W02000170,Gogledd Treforys / Morriston North,-3.923005,51.679802
 6020,W02000171,Llangyfelach a Thircoed / Llangyfelach & Tircoed,-3.99489,51.675607
 6021,W02000178,Penderi / Penderry,-3.969898,51.652319
-6022,W02000179,Tregŵyr / Gowerton,-4.038398,51.646145
+6022,W02000179,Treg?yr / Gowerton,-4.038398,51.646145
 6023,W02000016,Gorllewin Caernarfon a Waunfawr / Caernarfon West & Waunfawr,-4.257093,53.114456
 6024,W02000097,Llanfyllin a Llanwyddyn / Llanfyllin & Llanwyddyn,-3.265404,52.768822
 6025,W02000017,"Pen-y-groes, Tal-y-sarn a Dyffryn Nantlle / Pen-y-groes, Tal-y-sarn & Dyffryn Nantlle",-4.279267,53.054709
@@ -6041,7 +6041,7 @@
 6039,W02000099,Y Trallwng / Welshpool,-3.144402,52.662503
 6040,W02000019,Porthmadog,-4.135453,52.931276
 6041,W02000098,Llandysilio a Cegidfa / Four Crosses & Guilsfield,-3.100715,52.734961
-6042,W02000326,Pont-y-pŵl / Pontypool,-3.046739,51.702356
+6042,W02000326,Pont-y-p?l / Pontypool,-3.046739,51.702356
 6043,W02000327,Y Dafarn Newydd / New Inn,-3.007868,51.692758
 6044,W02000324,Abersychan,-3.066236,51.732359
 6045,W02000325,Trefddyn a Phen-y-garn / Trefethin & Pen-y-garn,-3.047203,51.714531
@@ -6050,7 +6050,7 @@
 6048,W02000320,De Glynebwy a Chwm / Ebbw Vale South & Cwm,-3.197398,51.758325
 6049,W02000321,Gogledd Abertyleri a Chwmtyleri / Abertillery North & Cwmtillery,-3.136637,51.734483
 6050,W02000328,Griffithstown a Sebastopol / Griffithstown & Sebastopol,-3.026577,51.682359
-6051,W02000329,Pontnewydd a Chwmbrân Uchaf / Pontnewydd & Upper Cwmbran,-3.027002,51.662174
+6051,W02000329,Pontnewydd a Chwmbr‚n Uchaf / Pontnewydd & Upper Cwmbran,-3.027002,51.662174
 6052,W02000276,Dwyrain Pentre'r Eglwys a Thon-teg / Church Village East & Ton-teg,-3.315528,51.569852
 6053,W02000277,Ffynnon Taf a Nantgarw / Taff's Well & Nantgarw,-3.278677,51.563299
 6054,W02000274,Gorllewin Tonyrefail / Tonyrefail West,-3.452557,51.583841
@@ -6071,13 +6071,13 @@
 6069,W02000142,Llanfihangel-ar-arth a Llanybydder / Llanfihangel-ar-arth & Llanybydder,-4.179729,52.049486
 6070,W02000143,"Llanymddyfri, Cil-y-cwm a Chynwyl Gaeo / Llandovery, Cil-y-cwm & Cynwyl Gaeo",-3.823319,52.003115
 6071,W02000140,Gorllewin Penfro a Chastellmartin / Pembroke West & Castlemartin,-4.923183,51.674743
-6072,W02000141,Dinbych-y-pysgod ac Ynys Bŷr / Tenby & Caldey,-4.709803,51.674925
+6072,W02000141,Dinbych-y-pysgod ac Ynys B?r / Tenby & Caldey,-4.709803,51.674925
 6073,W02000148,Gogledd Caerfyrddin / Carmarthen North,-4.305303,51.862797
 6074,W02000149,De Caerfyrddin a Llangynnwr / Carmarthen South & Llangynnwr,-4.302603,51.853197
 6075,W02000337,Gogledd y Fenni / Abergavenny North,-3.013025,51.830928
 6076,W02000334,Hollybush a Henllys / Hollybush & Henllys,-3.045525,51.637982
 6077,W02000335,Llantarnam ac Oakfield / Llantarnam & Oakfield,-3.007482,51.637501
-6078,W02000332,Cwmbrân / Cwmbran,-3.031098,51.646399
+6078,W02000332,Cwmbr‚n / Cwmbran,-3.031098,51.646399
 6079,W02000333,Fairwater a Greenmeadow / Fairwater & Greenmeadow,-3.052506,51.645683
 6080,W02000330,Croesyceiliog,-3.00777,51.659489
 6081,W02000331,Gorllewin Pontnewydd a Thornhill / West Pontnewydd & Thornhill,-3.045748,51.657578
@@ -6096,10 +6096,10 @@
 6094,W02000156,"Llan-non, Cross Hands a Phen-y-groes / Llan-non, Cross Hands & Pen-y-groes",-4.093764,51.789189
 6095,W02000157,Glyn a Phontyberem / Glyn & Pontyberem,-4.160634,51.783842
 6096,W02000154,Rhydaman a Betws / Ammanford & Betws,-3.986183,51.791778
-6097,W02000152,Llandybïe a Saron / Llandybie & Saron,-4.011332,51.80227
+6097,W02000152,LlandybÔe a Saron / Llandybie & Saron,-4.011332,51.80227
 6098,W02000153,"Llanddarog, Llangyndeyrn a Glanyfferi / Llanddarog, Llangyndeyrn & Ferryside",-4.240238,51.782571
 6099,W02000151,"Brynaman, Y Garnant a Glanaman / Brynaman, Y Garnant & Glanaman",-3.902555,51.805093
-6100,W02000158,Yr Hendy a Thŷ-croes / Yr Hendy & Tŷ-croes,-4.051399,51.726142
+6100,W02000158,Yr Hendy a Th?-croes / Yr Hendy & T?-croes,-4.051399,51.726142
 6101,W02000159,Cydweli a Thrimsaran / Cydweli & Trimsaran,-4.292447,51.735848
 6102,W02000066,Shotton a Garden City / Shotton & Garden City,-3.035824,53.20913
 6103,W02000067,De Cei Connah a Phentre-moch / Connah's Quay South & Northop Hall,-3.07261,53.205307
@@ -6133,10 +6133,10 @@
 6131,W02000388,Tredelerch / Rumney,-3.128587,51.505747
 6132,W02000256,Aberaman,-3.429478,51.696877
 6133,W02000257,Aberpennar / Mountain Ash,-3.381603,51.682962
-6134,W02000254,Gorllewin Aberdâr / Aberdare West,-3.463809,51.716032
-6135,W02000255,Dwyrain Aberdâr a Chwm-bach / Aberdare East & Cwm-bach,-3.418594,51.709443
+6134,W02000254,Gorllewin Aberd‚r / Aberdare West,-3.463809,51.716032
+6135,W02000255,Dwyrain Aberd‚r a Chwm-bach / Aberdare East & Cwm-bach,-3.418594,51.709443
 6136,W02000252,Hirwaun a'r Rhigos / Hirwaun & Rhigos,-3.503289,51.738231
-6137,W02000253,Gogledd Aberdâr a Llwydcoed / Aberdare North & Llwydcoed,-3.456018,51.721865
+6137,W02000253,Gogledd Aberd‚r a Llwydcoed / Aberdare North & Llwydcoed,-3.456018,51.721865
 6138,W02000250,Y Rhws a'r Maes Awyr / Rhoose & Airport,-3.405479,51.403201
 6139,W02000251,Ynys y Barri / Barry Island,-3.275582,51.398092
 6140,W02000258,Treherbert,-3.540113,51.676224
@@ -6144,13 +6144,13 @@
 6142,W02000406,Treganna / Canton,-3.20753,51.480521
 6143,W02000407,Dwyrain Caerau / Caerau East,-3.237367,51.478482
 6144,W02000404,Y Sblot / Splott,-3.151844,51.482446
-6145,W02000405,Dwyrain Trelái / Ely East,-3.250362,51.480355
+6145,W02000405,Dwyrain Trel·i / Ely East,-3.250362,51.480355
 6146,W02000402,Adamsdown,-3.157997,51.485438
 6147,W02000403,Tremorfa a Phengam / Tremorfa & Pengam,-3.140454,51.488352
 6148,W02000400,Pontcanna,-3.199292,51.48582
 6149,W02000401,Parc Victoria / Victoria Park,-3.215996,51.48577
 6150,W02000408,De Glanyrafon / South Riverside,-3.191708,51.478783
-6151,W02000409,Gorllewin Trelái / Ely West,-3.264613,51.473865
+6151,W02000409,Gorllewin Trel·i / Ely West,-3.264613,51.473865
 6152,W02000126,Cilgerran a Chrymych / Cilgerran & Crymych,-4.65086,52.023588
 6153,W02000127,Abergwaun / Fishguard,-4.976692,51.993469
 6154,W02000124,Aberteifi ac Aber-porth / Cardigan & Aber-porth,-4.643974,52.090697
@@ -6161,12 +6161,12 @@
 6159,W02000128,Tyddewi a Treletert / St Davids & Letterston,-5.130418,51.904669
 6160,W02000129,"Crundale, Clunderwen a Maenclochog / Crundale, Clynderwen & Maenclochog",-4.855923,51.85917
 6161,W02000076,"Coed-llai, Treuddyn a'r Waun / Leeswood, Treuddyn & Gwernaffield",-3.141273,53.141155
-6162,W02000077,Yr Hôb / Hope,-3.038941,53.110742
+6162,W02000077,Yr HÙb / Hope,-3.038941,53.110742
 6163,W02000074,De Bwcle / Buckley South,-3.074616,53.165731
 6164,W02000075,Pen-y-ffordd a Higher Kinnerton / Pen-y-ffordd & Higher Kinnerton,-3.039136,53.149261
 6165,W02000072,Brychdyn a Saltney / Broughton & Saltney,-2.974591,53.168083
 6166,W02000073,Yr Wyddgrug / Mold,-3.145343,53.166024
-6167,W02000070,Ewloe a Phenarlâg / Ewloe & Hawarden,-3.052159,53.185692
+6167,W02000070,Ewloe a Phenarl‚g / Ewloe & Hawarden,-3.052159,53.185692
 6168,W02000071,New Brighton a Mynyddisa / New Brighton & Mynyddisa,-3.107698,53.169717
 6169,W02000316,Sirhywi / Sirhowy,-3.25047,51.784858
 6170,W02000397,De'r Tyllgoed / Fairwater South,-3.243033,51.489593
@@ -6191,7 +6191,7 @@
 6189,W02000226,"Pen-prysg, Hendre a Felindre / Pen-prysg, Hendre & Felindre",-3.505233,51.525595
 6190,W02000227,Corneli / Cornelly,-3.704851,51.521709
 6191,W02000224,"Sarn, Bryn-coch a Bryncethin / Sarn, Bryn-coch & Bryncethin",-3.579425,51.542039
-6192,W02000225,"Y Pîl, Mynydd Cynffig a Chefncribwr / Pyle, Kenfig Hill & Cefncribwr",-3.681633,51.531714
+6192,W02000225,"Y PÓl, Mynydd Cynffig a Chefncribwr / Pyle, Kenfig Hill & Cefncribwr",-3.681633,51.531714
 6193,W02000222,"Gorllewin Maesteg, Garth a Llangynwyd / Maesteg West, Garth & Llangynwyd",-3.642847,51.595951
 6194,W02000223,Ynysawdre ac Abercynffig / Ynysawdre & Aberkenfig,-3.592754,51.547301
 6195,W02000220,"Nant-y-moel, Cwmogwr a Melin Ifan Ddu / Nant-y-moel, Ogmore Vale & Blackmill",-3.540474,51.603426
