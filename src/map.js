@@ -1,7 +1,7 @@
 /* global mapboxgl */
 
 // Factories -----------------------------------------------------------------
-const createMap = (long, lat, zoom) => {
+const createMap = (config, long, lat, zoom) => {
 
     // Check the parameters are sane and set to defaults if not
     const getFloatParam = (val, defVal) => {
@@ -16,13 +16,11 @@ const createMap = (long, lat, zoom) => {
     const latitude = getFloatParam(lat, 51.510356);
     const zoomLevel = getFloatParam(zoom, 12.5);
 
-    mapboxgl.accessToken =
-        "pk.eyJ1IjoiaGF3a2luc29ob2NsIiwiYSI6ImNraDBtYW9ja" +
-        "TB6YXkycm52Y2t6MTB2anEifQ.G4BRLK2Zb9BwnHsVRdAeGQ";
+    mapboxgl.accessToken = config.mapboxAccessToken;
 
     const map = new mapboxgl.Map({
         container: "map",
-        style: "mapbox://styles/hawkinsohocl/cknpx5mvp4n7e17qqijitt1jd", 
+        style: config.mapboxStyleUrl, 
         center: [longitude, latitude],
         zoom: zoomLevel
     });
@@ -30,9 +28,10 @@ const createMap = (long, lat, zoom) => {
     return map;
 };
 
-const createApp = (map, csrf) => ({
+const createApp = (config, map, csrf) => ({
 
     selection: null,
+    config: config,
     map: map,
     csrf: csrf,
 
@@ -52,14 +51,14 @@ const createApp = (map, csrf) => ({
 
             map.addSource("msoa", {
                 "type": "vector",
-                "url": "mapbox://hawkinsohocl.0tfneyno" 
+                "url": config.mapboxSourceUrl
             });
 
             map.addLayer({
                 "id": "msoa-highlight",
                 "type": "fill",
                 "source": "msoa",
-                "source-layer": "msoa-2011-polygons-hcl-ac5dzy",
+                "source-layer": config.mapboxSourceName,
                 "paint": {
                     "fill-color": "#682f7f",
                     "fill-opacity": 0
@@ -214,8 +213,8 @@ const createMessageFactory = (app) => {
                 <p>${properties.msoa11nm}</p>
                 <p>${properties.msoa11cd}</p>
                 <p>
-                    <a href="/msoanames/static/MSOA-Names-1.13.xlsx">Excel</a> /
-                    <a href="/msoanames/static/MSOA-Names-1.13.csv">CSV</a>
+                    <a href="/msoanames/static/MSOA-Names-${app.config.msoanamesVersion}.xlsx">Excel</a> /
+                    <a href="/msoanames/static/MSOA-Names-${app.config.msoanamesVersion}.csv">CSV</a>
                 </p>
             </div>
             <div id="buttonbox">
