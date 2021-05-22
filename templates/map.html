@@ -24,6 +24,7 @@
         <p>Find out more at the <a href="/msoanames" tabindex="1">homepage</a>.</p>
     </div>
     <script>
+
     const config = {
         "msoanamesVersion": "1.13",
         "mapboxStyleUrl": "mapbox://styles/hawkinsohocl/cknpx5mvp4n7e17qqijitt1jd",
@@ -31,11 +32,14 @@
         "mapboxSourceUrl": "mapbox://hawkinsohocl.0tfneyno",
         "mapboxAccessToken": "pk.eyJ1IjoiaGF3a2luc29ob2NsIiwiYSI6ImNraDBtYW9jaTB6YXkycm52Y2t6MTB2anEifQ.G4BRLK2Zb9BwnHsVRdAeGQ"
     };
+
     const long = msoa.getQueryString("long");
     const lat = msoa.getQueryString("lat");
     const zoom = msoa.getQueryString("zoom");
     const csrf = "{{ csrf_token() }}";
+    
     msoa.startMap(config, long, lat, zoom, csrf);
+    
     </script>
 </body>
 </html>
