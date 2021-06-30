@@ -48,8 +48,7 @@ def msoas():
 def serve_static(filename):
     base_url = 'https://houseofcommonslibrary.github.io/msoanames/'
     url = '{0}{1}'.format(base_url, filename)
-    return redirect(url, code=308)
-    
+    return redirect(url, code=308) 
 
 # Main -----------------------------------------------------------------------
 
