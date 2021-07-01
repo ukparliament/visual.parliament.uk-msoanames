@@ -35,14 +35,16 @@ csrf = CSRFProtect(app)
 @csrf.exempt
 def index():
     """Render the index page."""
-    url = 'https://houseofcommonslibrary.github.io/msoanames/'
-    return redirect(url, code=308)
+    return render_template('redirect.html')
 
 @app.route('/msoanames/map')
 def msoas():
     """Render the MSOA map."""
-    url = 'https://houseofcommonslibrary.github.io/msoanames/map/'
-    return redirect(url, code=308)
+    return render_template('redirect.html')
+
+@app.route('/msoanames/assets/<path:filename>')
+def serve_assets(filename):
+    return send_from_directory('assets', filename)
 
 @app.route('/msoanames/static/<path:filename>')
 def serve_static(filename):
